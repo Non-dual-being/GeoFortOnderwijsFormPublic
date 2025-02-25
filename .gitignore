@@ -1,0 +1,9 @@
+.env
+*.sql
+*.md
+/notesandsetup/
+/oldCodeFiles/
+/vendor/
+*.json
+*.lock
+

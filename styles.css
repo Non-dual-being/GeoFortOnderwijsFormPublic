@@ -1,0 +1,3347 @@
+* {
+    box-sizing: border-box;
+}
+
+:root{
+
+    /*Theme colers*/ 
+    --BG-DARK-BLUE:  #081540;
+    --THEME-RED:  rgb(217, 49, 52);
+    --BG-FIELDSET-GRAY:#f2f2f2;
+    --GOLDEN-HIGHLIGHT:#fec027;
+    --BORDER-DASHBOARD-LEGEND:#28613f;
+    --BG-DARK-GRAY-BLUE: #d1dce5;
+    --BORDER-COLOR-ERROR-MESSAGE-GENERAL: 1px solid rgb(255, 153, 0);
+    --BG-COLOR-ERROR-MESSAGE-GENERAL: #fff7e6;
+
+    /*||--[font size]---||*/
+    --FS-BIG: clamp(2rem, 2.8vw, 2.5rem);
+
+
+    /*Container*/
+    --BG-DARK-GRAY-BLUE: #c0d1e0; /* Iets donkerder blauwgrijs */
+    --GRADIENT-DARK-BLUE: #2f4a77; /* Donkerdere maar zachtere tint blauw voor de buitenkant */
+    --GRADIENT-LIGHT-BLUE: #e2edf7; /* Lichtere kleur voor de zachte overgang in het midden */
+    --BORDER-OVERVIEW: #5a6e91; /* Donkere randkleur om de container af te bakenen */
+    --H3-COLOR: #081540; /* Donkerblauwe kleur voor de h3 kop */
+    --H3-SHADOW: rgba(0, 0, 0, 0.2); /* Schaduw voor de h3 */
+
+    /*Content*/
+    --BG-CARD: #ffffff; /* Achtergrondkleur van de kaart */
+    --BORDER-CARD: #081540; /* Randkleur van de kaart */
+    --TEXT-COLOR: #333333; /* Tekstkleur voor leesbaarheid */
+    --BG-STATUS: #f3f7ff; /* Achtergrondkleur voor de statussectie */
+    --BORDER-STATUS-LEFT: #081540; /* Scheidingslijnkleur voor de statussectie */
+    --SELECT-BG: #f9f9f9; /* Achtergrondkleur voor de select dropdown */
+    --SELECT-BORDER: #cccccc; /* Randkleur voor de select dropdown */
+    --H4-COLOR: #081540; /* Kleur van de h4 kop in de status sectie */
+    --BORDER-DASHBOARD-OVERVIEW:  #154273;
+
+}
+
+/*---[De styling voor het alternatief als de database het niet doet op het onderwijsformulier]---*/
+
+/*secion (main-container*/
+
+.foutMeldingFormulierAlgemeen{
+    display: flex;
+    flex-direction: column;
+    justify-content: start;
+    align-items: center;
+    min-width: fit-content;
+    max-width: 90%;
+    height: auto;
+    background-color: var(--BG-FIELDSET-GRAY);
+    border: 4px solid var(--BG-DARK-BLUE);
+    box-shadow: 0px 0px 4px #2f4a77; 
+    color: #333;
+    transition: background-color 0.8s ease-in-out;
+    padding: 1rem 1.5rem;
+    border-radius: 7px;
+}
+
+.foutMeldingFormulierAlgemeen-H2{
+    font-size: var(--FS-BIG);
+    font-weight: bold;
+    display: block;
+    color: var(--THEME-RED);
+    justify-self: start;
+    height: fit-content;
+    margin: 0.7rem;
+    background-color: var(--TEXT-COLOR);
+    width: 100%;
+    text-align: center;
+    padding: 1.5rem;
+    border-radius: 20px;
+}
+
+.foutMeldingFormulierAlgemeen-Para {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center; /* Zorgt voor een nette uitlijning */
+    text-align: center;
+    font-size: 1.1rem;
+    color: black;
+    max-width: 80%; /* Zorgt dat de tekst niet te breed uitloopt */
+    margin: 0;
+    line-height: 1.5; /* Betere leesbaarheid */
+    font-weight: bold;
+    font-size: clamp(1.2rem, 1.5vw, 1.5rem);
+    width: 80%;
+}
+.foutMeldingFormulierAlgemeen-ParaInlog {
+    display: grid;
+    grid-template-rows: repeat(3, 1fr);
+    justify-items: center;
+    background-color: whitesmoke;
+    padding: 2rem;
+    border-radius: 15px;
+    box-shadow: inset 0px 0px 1px var(--BG-DARK-BLUE);
+    row-gap: 10px;
+    font-weight: bold;
+    color: var(--BG-DARK-BLUE);
+
+
+
+}
+
+.foutMeldingFormulierAlgemeen-ParaSpan {
+    display: block; /* Laat toe om padding/margin goed toe te passen */
+    min-width: 100%;
+    font-weight: bold;
+    font-size: 1rem;
+    color: #333;
+    padding-top: 0.3rem;
+    text-align: center;
+}
+
+.foutMeldingFormulierAlgemeen-ParaLink {
+    display: inline-block;
+    font-weight: bold;
+    color: var(--BG-DARK-BLUE);
+    text-decoration: none;
+    padding: 0.2rem 0;
+    transition: color 0.3s ease-in-out, text-decoration 0.3s ease-in-out;
+    font-size: 1rem;
+    cursor: pointer;
+}
+
+.foutMeldingFormulierAlgemeen-ParaLink:hover {
+    color: var(--THEME-RED); /* Kleurverandering bij hover */
+    text-decoration: underline;
+}
+
+.fullBody{
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: auto;
+    overflow: scroll;
+
+}
+
+/*styling grid om de onderwijsformuluer te downloaden*/
+
+.download-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+    padding: 1rem;
+    background: var(--BG-FIELDSET-GRAY);
+    border-radius: 10px;
+    text-align: center;
+    box-shadow: inset 0 1px 10px 1px rgba(8, 21, 64, 0.8); 
+}
+
+.download-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 10px;
+    background-color: white;
+    border-radius: 10px;
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+    min-width: 300px;
+    height: auto;
+
+}
+
+.download-label {
+    font-size: 1.2rem;
+    font-weight: bold;
+    margin-bottom: 10px;
+    background-color: #333;
+    color: var(--THEME-RED);
+    padding: 0.5rem 0;
+    border-radius: 10px;
+    min-width: 100%;
+}
+
+.download-image {
+    width: 100%;
+    height: auto;
+    margin-bottom: 10px;
+}
+
+.download-button {
+    background-color: var(--THEME-RED);
+    color: white;
+    border: 2px solid var(--BG-DARK-BLUE);
+    padding: 8px 12px;
+    font-size: 1rem;
+    font-weight: bold;
+    cursor: pointer;
+    border-radius: 5px;
+    transition: background-color 0.3s ease;
+}
+
+.download-button:hover {
+    background-color: var(--BG-DARK-BLUE);
+    color: var(--THEME-RED);
+}
+
+
+/**||------------------[boekingsformulier]------------------||*/
+
+
+body:not(.body-dashboard){
+    font-family: 'Avenir', sans-serif;
+    margin: 20px;
+    padding: 20px;
+    background-color: #f9f9f9;
+    justify-content: center; /* Centreren over de verticale as */
+    align-items: center; /* Centreren over de horizontale as */
+    overflow-x:hidden;
+
+}
+
+
+input[type="text"], input[type="email"], input[type="password"], input[type="date"], input[type="number"], input[type="tel"] {
+    background-color: white; /* Background color for the input box */
+    border: 2px solid var(--BG-DARK-BLUE); /* Dark blue border color */
+    border-radius: 5px;
+    padding: 10px; /* Padding */
+    font-size: 16px; /* Font size */
+    color: black; /* Text color */
+    transition: border-color 0.3s, background-color 0.3s; /* Smooth transition for border and background color */
+    box-sizing: border-box;
+}
+
+/* Change the border and background color of input elements on hover */
+input[type="text"]:hover, input[type="email"]:hover, input[type="password"]:hover, input[type="date"]:hover, input[type="number"]:hover, input[type="tel"]:hover {
+    border-color: var(--BG-DARK-BLUE); /* Dark blue border color on hover */
+    background-color: rgba(8, 21, 64, 0.1); /* Light blue background color on hover */
+}
+
+/* Change the border color of input elements on focus */
+input[type="text"]:focus, input[type="email"]:focus, input[type="password"]:focus, input[type="date"]:focus, input[type="number"]:focus, input[type="tel"]:focus {
+    border-color: var(--BG-DARK-BLUE); /* Dark blue border color on focus */
+    outline: none; /* Remove default outline */
+    background-color: rgba(8, 21, 64, 0.2); /* Slightly darker blue background color on focus */
+}
+
+
+
+/* Reset browser default styles for select elements */
+select {
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+    background-color: white;
+    border-radius: 5px;
+    padding: 10px;
+    font-size: 16px;
+    color: black;
+    background-image: url('data:image/svg+xml;charset=US-ASCII,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 4 5"><path fill="%23D93134" d="M2 5L0 3h4L2 5z"/></svg>'); /* Pijltje toevoegen */
+    background-repeat: no-repeat;
+    background-position: right 10px top 50%;
+    background-size: 10px;
+    padding-right: 30px;
+    box-sizing: border-box; /* Include padding and border in the element's total width and height */
+    position: relative;
+    transition: all 0.3s ease;
+}
+
+/* Ensure the custom styles are applied even with the default select behavior */
+select::-ms-expand {
+    display: none; /* Hide the default arrow in IE and Edge */
+}
+
+select:focus {
+    outline: none;
+    border-color: var(--BG-DARK-BLUE); /* Blue border color on focus */
+}
+
+
+/* Apply custom styles to the options in the select dropdown */
+select option {
+    background-color: white !important; /* Background color for options */
+    color: black !important; /* Text color for options */
+}
+
+/* Change the background color of options on hover */
+select option:hover {
+    background-color: var(--THEME-RED) !important; /* Red color */
+    color: white !important; /* White text color for better contrast */
+}
+
+/* Change the background color of selected options */
+select option:checked {
+    background-color: var(--BG-DARK-BLUE) !important; /* Blue color */
+    color: white !important; /* Text color for better contrast */
+}
+
+h1 {
+    color:var(--THEME-RED);
+    font: 32px Montserrat, sans-serif;
+    margin: 0px 0px 32px;
+    font-weight: 600;
+    position: relative;
+    text-align: center;
+
+}
+
+/*||-----[meldingen op het boekingsformulier]-------------- ||*/
+
+.foute-invoermelding {
+    position: absolute;  /* Maakt het mogelijk de foutmelding los van de flow te plaatsen */
+    background-color: var(--BG-DARK-BLUE);
+    color: white;
+    padding: 10px 1rem;
+    border-radius: 7px;
+    border: 1px solid white;
+    display: none;
+    opacity: 0;
+    z-index: 2000;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+    font-size: clamp(10px, 1.6vw, 1rem);
+    transition: opacity 1s ease;
+    left: 0;  /* Plaatsing aan de linkerzijde van het inputveld */
+    top: -30px; /* Plaatsing net boven het inputveld, pas dit aan naar behoefte */
+    width: auto; /* Zorgt voor extra ruimte */
+    text-align: left; /* Zorg dat de tekst netjes uitlijnt */
+
+}
+
+
+.foute-invoermelding.toonFoutMelding {
+    display: flex;
+    opacity: 1;
+}
+
+.foute-invoermelding.toonFoutMelding.relativePos {
+    position: relative;
+}
+
+
+/* Optionele foutmelding styling */
+input.foute-invoermelding__errorField.extraLayer, 
+textarea#vragenOpmerkingen.foute-invoermelding__errorField.extraLayer,
+select.foute-invoermelding__errorField.extraLayer {
+    border: var(--BORDER-COLOR-ERROR-MESSAGE-GENERAL);
+    background-color: var(--BG-COLOR-ERROR-MESSAGE-GENERAL);
+}
+
+
+
+.foutmeldingStylingFunctie {
+    position: absolute;
+    left: 35%;
+    width: 30%;
+    font-size: 18px;
+    color: #ffffff;
+    padding: 15px;
+    border-radius: 8px;
+    border: 4px solid white;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+    z-index: 2000;
+    opacity: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: opacity 0.6s ease, transform 0.3s ease;
+    transform: scale(1);
+}
+
+
+
+.inlogh1 {
+    color: var(--BG-DARK-BLUE);
+}
+
+
+form:not(#login-form):not(.dashboard-form):not(.request-item.form):not(.request-item.form__bekijk):not(.logOutForm.dashBoard) {
+    max-width: 700px;
+    margin: 0 auto;
+    background: #fff;
+    padding: 20px;
+    border-radius: 5px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    background-image: url('./images/hoogtelijnen-1.png');
+    background-size: contain;  /* Zorgt ervoor dat de afbeelding de hele achtergrond vult */
+    background-position: center;  /* Plaatst de afbeelding in het midden van de achtergrond */
+    background-repeat: repeat;  /* Zorgt ervoor dat de afbeelding niet herhaald wordt */
+
+}
+
+fieldset {
+    margin-bottom: 20px;
+    border: 1px solid black; 
+    padding: 30px; 
+    background-color: var(--BG-FIELDSET-GRAY) /* Subtiele achtergrondkleur */
+}
+
+.fieldset-informative {
+    border: 2px solid var(--BG-DARK-BLUE);
+    position: relative;
+    margin-bottom: 25px;
+    padding: 40px; 
+    background-color: var(--THEME-RED); /* Subtiele achtergrondkleur */
+    z-index: 2;
+    
+}
+
+.fieldset-informative-price {
+    border: 2px solid var(--BG-DARK-BLUE);
+    position: relative;
+    margin-bottom: 20px;
+    padding: 35px; 
+    background-color: #A6B1E1;
+    z-index: 2;
+    
+}
+
+
+
+fieldset p {
+    margin: 10px 0;
+    line-height: 1.5;
+}
+
+fieldset ul {
+    padding-left: 20px;
+    list-style-type: disc;
+}
+
+fieldset ul li {
+    margin: 5px 0;
+}
+
+.lesprogramma select {
+    border: 3px solid var(--BG-DARK-BLUE)(217, 49, 52, 0.8); /* Thicker border */
+}
+/* Specifieke hover styling binnen het fieldset */
+.lesprogramma select:hover {
+    border-color: transparent; /* Remove the initial border */
+}
+
+.flatpickr-innerContainer {
+    padding: 0 5px 5px; /* Voeg ruimte toe binnen de kalender zonder de totale hoogte te beïnvloeden */
+}
+
+
+
+.nowrap{
+    display: block;
+    width: 100%;
+}
+
+.leeftijd-grid {
+    row-gap: 0px;
+    padding: 0.8rem 1rem;
+    background: var(--THEME-RED);
+    border: 4px solid var(--BG-DARK-BLUE);
+    border-radius: 10px;
+    box-sizing: border-box;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    font-weight: bold;
+    font-size: 1.1rem;
+    color: black;
+    margin-top: 1rem;
+    grid-template-columns: repeat(auto-fit, minmax(150px,1fr));
+    column-gap: 15px;
+}
+
+
+
+/* 
+grid-template-columns: repeat(auto-fit, minmax(auto, 1fr));
+1. repeat(auto-fit): Past dynamisch kolommen toe die passen in de beschikbare ruimte.
+2. minmax(auto, 1fr): Kolommen hebben een minimale breedte op basis van de inhoud (auto),
+   en een maximale breedte die gelijk verdeeld wordt (1fr).
+3. Responsief: Kolommen worden toegevoegd/verwijderd afhankelijk van de schermgrootte.
+4. Flexibel: Past zich aan zowel inhoud als containerbreedte aan.
+5. Ideaal voor dynamische layouts en eenvoudige onderhoudbaarheid.
+*/
+
+
+.grid-column {
+    display: grid;
+    grid-template-rows: 1fr auto; /* Label en select in twee rijen, auto is automatisch aangepast aan inhoud main axis verticaal*/
+    row-gap: 5px;
+    align-items: stretch; /*In de y richting nemen de element max hoogthe in*/
+    height: auto;
+    text-align: center;
+    justify-content: stretch;
+    max-height: 600px;
+    min-width: 100%;
+}
+
+
+
+.grid-column select{
+    height: auto;
+    height: 150px;
+    min-width: 90%;
+    border-radius: 5px;
+}
+
+
+
+.grid-column label{
+    max-height: 100%;
+    min-width: 90%;
+    border-radius: 5px;
+}
+
+
+
+
+
+.label-styling {
+    display: block;
+    grid-row: 1;
+    min-height: 2rem; /* Zorg voor consistentie */
+    line-height: 1.4em;
+    text-align: left; /* Links uitlijnen */
+    margin-bottom: 5px; /* Ruimte tussen label en select */
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    background: linear-gradient(to right, #ffffff, #f9f9f9);
+    border: 2px solid #081540;
+    border-radius: 12px;
+    padding: 0.4rem;
+    transition: all 0.3s ease;
+}
+
+
+.label-styling-nowrap-span {
+    white-space: nowrap;
+    display: block;
+    color: var(--THEME-RED);
+    font-weight: 900;
+    font-size: 1.7em;
+    text-decoration: underline;
+    position: relative; /* Zorg dat de tooltip zich hierop positioneert */
+    cursor: pointer; /* Zorg voor een visuele indicatie dat er interactie mogelijk is */
+    padding-bottom: 10px
+
+}
+
+.inline-style {
+    display: inline;
+    padding: 0;
+}
+
+.label-styling-nowrap-span:hover::before{
+    content: attr(data-info-tip);
+    position: absolute;
+    top: -60px; /* Pas dit aan om de tooltip op de juiste hoogte te plaatsen */
+    left: 0;
+    background: linear-gradient(135deg, #081540, #2f4a77, #5a6e91);/* Rood naar blauw verloop */
+    padding: 0.8em 1em;
+    border-radius: 10px;
+    border: 2px solid #ffffff; /* Witte rand */
+    font-size: 0.85rem;
+    font-weight: 700;
+    color: #ffffff; /* Witte tekstkleur */
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3); /* Subtiele schaduw */
+    z-index: 1000; /* Zorg ervoor dat de tooltip boven andere elementen staat */
+
+}
+
+.label-styling-nowrap-span:hover::after {
+    content: '';
+    position: absolute;
+    top: -10px; /* Zorg ervoor dat de pijl net onder de tooltip staat */
+    left: 15px; /* Pas dit aan om de pijl te centreren */
+    width: 0;
+    height: 0;
+    border-left: 8px solid transparent;
+    border-right: 8px solid transparent;
+    z-index: 2; /* Zorg dat de pijl boven andere elementen staat */
+    border-top: 8px solid #2f4a77;
+}
+
+
+
+
+.label-styling:hover {
+    transform: scale(1.05);
+    background-color: #e6e6e6;
+}
+
+.label-styling:focus {
+    transform: scale(1.05);
+    border-color: var(--BG-DARK-BLUE);
+}
+
+
+.multipleSelectNiveau.highlight-error {
+    border: 1px solid #ff9900 ;
+    background-color: #fff7e6 ;
+}
+
+
+.multipleSelectNiveau {
+    background-color: var(--SELECT-BG);
+    border: 2px solid var(--SELECT-BORDER); /* Gebruik jouw variabele voor de randkleur */
+    border-radius: 5px;
+    padding: 10px;
+    font-size: 1rem;
+    color: var(--TEXT-COLOR); /* Zorg voor consistente tekstkleur */
+    width: 100%;
+    max-height: 150px;
+    overflow: hidden; /* Verberg opties standaard */
+    box-sizing: border-box;
+    background-image: none; /* Verwijder de standaard pijltjes */
+    transition: max-height 0.3s ease, border-color 0.3s ease, background-color 0.3s ease;
+    cursor: pointer; /* Klikbaar maken */
+}
+
+/* Uitschuiven bij focus */
+.multipleSelectNiveau:focus,
+.multipleSelectNiveau:hover {
+    max-height: 155px; /* Schuif uit om opties te tonen */
+    overflow: auto; /* Scrollen mogelijk maken bij veel opties */
+    border-color: var(--BG-DARK-BLUE); /* Focusrand */
+    box-shadow: 0 0 5px rgba(8, 21, 64, 0.5); /* Lichtblauwe gloed */
+    outline: none; /* Verwijder standaard outline */
+}
+
+/* Opties binnen de select */
+.multipleSelectNiveau option {
+    padding: 10px;
+    margin: 2px 0;
+    background-color: var(--BG-CARD); /* Witte achtergrond zoals jouw kaarten */
+    color: var(--TEXT-COLOR); /* Consistente tekstkleur */
+    border: none;
+    cursor: pointer;
+    border-radius: 10px;
+}
+
+/* Hover effect op opties */
+.multipleSelectNiveau option:hover {
+    background-color: var(--THEME-RED); /* Rode kleur bij hover */
+    color: white; /* Witte tekst voor betere leesbaarheid */
+    box-shadow: 0 0 1px var(--THEME-RED); /* Licht effect bij hover */
+}
+
+/* Geselecteerde optie */
+.multipleSelectNiveau option:checked {
+    box-shadow: inset 0 0 3px var(--BG-CARD); /* Inwendig schaduweffect */
+}
+
+/* Aanvullende klasse voor border en box-shadow */
+/* Door dubbele select ben je specifiek en geef je aan dat je hier mee de elemente selecteert die breide klassen hebben*/
+.multipleSelectNiveau.customBorderStyle {
+    border: 2px solid var(--BG-DARK-BLUE); /* Nieuwe borderkleur */
+}
+
+/* Hover effect voor de aangepaste stijl */
+.multipleSelectNiveau.customBorderStyle:hover {
+
+    box-shadow: 0 0 10px rgba(8, 21, 64, 0.7); /* Hover box-shadow */
+}
+
+
+.highlighted-text-info {
+    color: var(--THEME-RED);
+    font-weight: 900;
+    font-size: 1.5em;
+    text-decoration: underline;
+    position: relative; /* Zorg dat de tooltip zich hierop positioneert */
+    cursor: pointer; /* Zorg voor een visuele indicatie dat er interactie mogelijk is */
+}
+.highlighted-text-info-PO {
+    color: var(--THEME-RED);
+    font-weight: 900;
+    text-decoration: underline;
+    position: relative; /* Zorg dat de tooltip zich hierop positioneert */
+    cursor: pointer; /* Zorg voor een visuele indicatie dat er interactie mogelijk is */
+}
+
+.highlighted-text-info:hover::before, .highlighted-text-info-PO:hover::before {
+    content: attr(data-info-tip);
+    position: absolute;
+    top: -60px; /* Pas dit aan om de tooltip op de juiste hoogte te plaatsen */
+    left: 0;
+    white-space: nowrap;
+    background: linear-gradient(135deg, #081540, #2f4a77, #5a6e91);/* Rood naar blauw verloop */
+    padding: 0.8em 1em;
+    border-radius: 10px;
+    border: 2px solid #ffffff; /* Witte rand */
+    font-size: 0.85rem;
+    font-weight: 700;
+    color: #ffffff; /* Witte tekstkleur */
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3); /* Subtiele schaduw */
+    z-index: 1000; /* Zorg ervoor dat de tooltip boven andere elementen staat */
+}
+
+.highlighted-text-info:hover::after, .highlighted-text-info-PO:hover::after {
+    content: '';
+    position: absolute;
+    top: -10px; /* Zorg ervoor dat de pijl net onder de tooltip staat */
+    left: 15px; /* Pas dit aan om de pijl te centreren */
+    width: 0;
+    height: 0;
+    border-left: 8px solid transparent;
+    border-right: 8px solid transparent;
+    z-index: 2; /* Zorg dat de pijl boven andere elementen staat */
+}
+
+
+.highlighted-text-info:hover::after {
+    border-top: 8px solid var(--BG-DARK-BLUE);
+}
+
+.highlighted-text-info-PO:hover::after {
+    border-top: 8px solid #ff0000; /* De rode kleur van het verloop */
+
+}
+
+
+.informative-text {
+    font-size: 16px;
+    background-color: white; /* Match the footer color */
+    padding: 15px;
+    padding-top: 0px;
+    color: black; /* White text for contrast */
+    border-radius: 5px;
+    border: 1px solid   var(--BG-DARK-BLUE); /* Lichtgrijze rand */
+}
+
+.informative-text-rooster {
+    font-size: 16px;
+    background-color:   white; /* Match the footer color */
+    padding: 15px;
+    padding-top: 0px;
+    color: black; /* White text for contrast */
+    border-radius: 5px;
+    border: 1px solid  black; /* Lichtgrijze rand */
+}
+
+
+.informative-text-rooster h4 {
+    color:var(--THEME-RED);
+    margin-bottom: 10px;
+    font-weight: bold;
+    font-size: 1.5em;
+    top: 30px;
+}
+
+
+
+.informative-text h4 {
+    color: var(--THEME-RED);
+    margin-bottom: 10px;
+    font-weight: bold;
+    font-size: 1.5em;
+    top: 30px;
+}
+
+.informative-text p {
+    margin-left: 10px; /* Indent the text */
+}
+
+.informative-text-rooster p {
+    margin-left: 10px; /* Indent the text */
+}
+
+.informative-text ul {
+    list-style: disc;
+    margin-left: 20px; /* Align with headers */
+    font-size: 1em; /* Standard font size */
+    padding-left: 20px;
+    margin-top: 10px;
+    color: black; /* Ensure text is white for contrast */
+}
+
+.informative-text-rooster ul {
+    list-style: disc;
+    margin-left: 20px; /* Align with headers */
+    font-size: 1em; /* Standard font size */
+    padding-left: 20px;
+    margin-top: 10px;
+    color: black; /* Ensure text is white for contrast */
+    font-weight: bold;
+}
+
+#gekozenKeuzeModule {
+    list-style-type: disc; /* Zorg dat het puntje een disc is */
+    list-style-position: inside; /* Zorg dat de bullet binnen de marge blijft */
+    margin-left: 8px; /* Ruimte vanaf de linkerkant */
+    font-size: 1em;
+    padding-left: 20px;
+    margin-top: 10px;
+    color: black;
+    font-weight: bold;
+}
+
+.informative-text ul.secondary-list {
+    margin-left: 40px; /* Verdere links inspringen voor de tweede opsomming */
+    font-size: 0.9em; /* Iets kleiner lettertype voor de tweede opsomming */
+    color: black; /* Ensure text is white for contrast */
+
+}
+
+.informative-text-rooster ul.secondary-list {
+    margin-left: 40px; /* Verdere links inspringen voor de tweede opsomming */
+    font-size: 0.9em; /* Iets kleiner lettertype voor de tweede opsomming */
+    color: black; /* Ensure text is white for contrast */
+}
+
+
+#groepAantal{
+    color: black;
+    font-weight: bold;
+    font-size: 1.6em;
+
+}
+
+.overview-section {
+    background-color: var(--BG-DARK-BLUE); /* Match the information section background */
+    color: white; /* White text for contrast */
+    border: 2px solid white;
+    padding: 20px;
+    border-radius: 5px;
+    margin-top: 10px; /* Add some margin to separate from the gray background */
+}
+
+
+.overview-section h3, .overview-section h4 {
+    color: white; /* Lichtgrijsblauwe kleur die past bij de blauwe achtergrond */
+    text-align: center;
+    
+}
+
+
+.overview-section p, .overview-section ul {
+    color: white; /* Ensure text is white for contrast */
+}
+
+.overview-section ul {
+    list-style: disc;
+    margin-left: 20px; /* Align with headers */
+    font-size: 1em; /* Standard font size */
+    padding-left: 20px;
+    margin-top: 10px;
+}
+
+legend:not(.fieldset-informative legend):not(.dashboard-legend) {
+    font: 30px Avenir, sans-serif;
+    font-weight: 700;
+    color: var(--THEME-RED);
+    background-color: #ffffffd5;
+    border-radius: 5px;
+    padding: 5px;
+    border: 1px solid black;
+    text-align: center;
+    box-sizing: content-box;
+    justify-content: space-between; /* Plaatst elementen gelijkmatig verdeeld */
+    display: inline-block;
+    flex-direction: row;
+    min-width: max-content; 
+    white-space: nowrap; 
+
+}
+
+
+.fieldset-informative legend {
+    font-size: 1.6em; /* Grotere tekst voor de titel */
+    font-weight: bold; /* Vetgedrukte tekst */
+    color: white !important; /* Contrasterende tekstkleur */
+    border-radius: 5px; /* Licht afgeronde hoeken voor een subtiele stijl */
+    text-align: center;
+    position: absolute; /* Absolute positionering */
+    top: 0px; /* Plaats de legend boven het fieldset */
+    left: 50%;
+    transform: translateX(-50%); /* Centreer de tekst horizontaal */
+    padding: 5px 10px; /* Voeg wat padding toe om de tekst beter te positioneren */
+    z-index: 2; /* Zorg ervoor dat de legend bovenop de fieldset blijft */
+    min-width: max-content; 
+}
+
+.fieldset-informative-price legend {
+    font-size: 1.6em; /* Grotere tekst voor de titel */
+    font-weight: bold; /* Vetgedrukte tekst */
+    color: #f2f2f2 !important; /* Contrasterende tekstkleur */
+    border-radius: 5px; /* Licht afgeronde hoeken voor een subtiele stijl */
+    text-align: center;
+    position: absolute; /* Absolute positionering */
+    top: 0px; /* Plaats de legend boven het fieldset */
+    left: 50%;
+    transform: translateX(-50%); /* Centreer de tekst horizontaal */
+    padding: 5px 10px; /* Voeg wat padding toe om de tekst beter te positioneren */
+    z-index: 2; /* Zorg ervoor dat de legend bovenop de fieldset blijft */
+}
+
+
+
+label {
+    display: block;
+    margin: 10px 0 5px;
+    font-weight: bold;
+    text-align: left; 
+}
+
+input, select, button {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box; 
+}
+
+.foutmelding {
+    display: none;
+    color:white;
+    background-color: var(--BG-DARK-BLUE);
+    border: 1px solid #f5c6cb;
+    padding: 10px;
+    border-radius: 4px;
+    margin-top: 5px;
+}
+
+h3 {
+    font: 20px BwNista, -apple-system, BlinkMacSystemFont, sans-serif;
+    color: var(--THEME-RED);
+    margin: 0px 0px 10px;
+    font-weight: bold;
+}
+
+p {
+    margin: 5px 0;
+}
+
+/* Stijl voor de "meer informatie" link */
+
+.meerInformatieToggle span {
+    text-decoration: none; /* Zorg dat de tekst in de span geen onderstreping krijgt */
+}
+#meerInformatieToggle {
+    color: #0056b3;
+    text-decoration: none;
+    font-weight: bold;
+    border-bottom: 1px solid #0056b3;
+    cursor: pointer;
+    font-size: 12px;
+    margin-top: 5px;
+    transition: all 0.3s ease;
+}
+
+
+
+#meerInformatieToggle:hover {
+    color: var(--THEME-RED);
+    border-bottom: 1px solid var(--THEME-RED);
+    text-decoration: underline;
+}
+
+/* Stijl voor het informatieblok */
+/* Stijl voor het informatieblok */
+#meerInformatieContent {
+    display: none; /* Verborgen bij het laden */
+    background-color: var(--BG-DARK-BLUE); /* Donkerblauw voor consistentie met de footer */
+    padding: 15px;
+    margin-top: 5px;
+    border: var(--LIGHTBLUE-BORDER);
+    border-radius: 5px; /* Subtiel afgerond zoals andere secties */
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1); /* Zachte schaduw voor diepte */
+    font-family: Arial, sans-serif;
+    font-size: 14px;
+    color: white; /* Witte tekst voor contrast */
+    max-width: 100%;
+    transition: max-height 0.3s ease, opacity 0.3s ease;
+    overflow: hidden;
+    max-height: 0;
+    opacity: 0;
+    max-width: inherit;
+}
+
+/* Algemene stijl voor de 'meer informatie' link */
+.meerInformatieToggle {
+    color: #0056b3;
+    text-decoration: none!important;
+    font-weight: bold;
+    border-bottom: 1px solid #0056b3;
+    cursor: pointer;
+    font-size: 12px;
+    margin-top: 5px;
+    margin-bottom: 5px;
+    display: inline-block;
+    transition: all 0.3s ease;
+    margin-bottom: 8px;
+    margin-top: 8px;
+}
+
+.meerInformatieToggle::before,
+.meerInformatieToggle::after {
+    content: "";
+    text-decoration: none !important; /* Zorg ervoor dat er geen onderstreping op pseudo-elementen is */
+}
+
+.meerInformatieToggle:hover {
+    color: var(--THEME-RED);
+    border-bottom: 1px solid var(--THEME-RED);
+    text-decoration: underline;
+}
+
+/* Stijl voor het informatieblok */
+.meerInformatieContent {
+    display: none; /* Verborgen bij het laden */
+    background-color: var(--BG-DARK-BLUE); /* Donkerblauw voor consistentie */
+    padding: 15px;
+    margin-top: 5px;
+    border: var(--LIGHTBLUE-BORDER);
+    border-radius: 5px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1); /* Zachte schaduw */
+    font-family: Arial, sans-serif;
+    font-size: 14px;
+    color: white;
+    max-width: 100%;
+    transition: max-height 0.3s ease, opacity 0.3s ease;
+    overflow: hidden;
+    max-height: 0;
+    opacity: 0;
+}
+
+/* Stijl wanneer het informatieblok actief is */
+.meerInformatieContent.open {
+    display: block;
+    min-height: max-content;
+    opacity: 1;
+    transition: max-height 0.5s ease-in-out, opacity 0.3s ease;
+
+}
+
+/* Eventuele headers in het informatieblok */
+.meerInformatieContent h4 {
+    color: #F2B6B7; /* Fel rood zoals in de informative-text */
+    margin-bottom: 10px;
+    font-weight: bold;
+    font-size: 1.5em;
+}
+
+/* Specifieke paragraafstijl voor het informatieblok */
+.meerInformatieContent p {
+    margin-left: 10px; /* Indent de tekst voor een nette uitlijning */
+    color: white; /* Zorg ervoor dat de tekst wit blijft */
+    font-size: 1em;
+}
+
+/* Opsommingstekenlijst in het informatieblok */
+.meerInformatieContent ul {
+    list-style: disc;
+    margin-left: 20px;
+    font-size: 1em;
+    padding-left: 20px;
+    margin-top: 10px;
+    color: white; /* Witte tekst voor goede leesbaarheid */
+}
+
+.highlighted-text {
+    font-size: 1em; /* Vergroot de tekst */
+    color: var(--GOLDEN-HIGHLIGHT);
+    font-weight: 800;
+
+}
+.highlighted-text-red {
+    font-size: 1em; /* Vergroot de tekst */
+    color: var(--THEME-RED);
+    font-weight: 800;
+
+}
+
+.overview-section-tijden{
+    background-color: var(--BG-DARK-BLUE); /* Donkerblauwe achtergrond */
+    padding: 12px; /* Iets minder padding om het subtieler te maken */
+    border-radius: 8px; /* Rondere hoeken voor een zachtere uitstraling */
+    margin-top: 5px; /* Minder marge aan de bovenkant */
+    border: 3px solid #f0f0f0; /* Zachtere witte rand */
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15); /* Zachte schaduw voor diepte */
+    font-family: 'Avenir', sans-serif; /* Consistent lettertype */
+}
+
+.overview-section-tijden p {
+    font-size: 16px;
+    color: white;
+    margin: 0; /* Verwijdert overbodige marge van de paragraaf */
+}
+
+
+
+#roosterAfbeeldingContainer {
+    display: none;
+    margin-top: 20px;
+    border: 2px solid #ccc;
+    padding: 10px;
+    max-height: 300px;
+    overflow: auto;
+    background-color:  var(--BG-FIELDSET-GRAY);
+    border-radius: 5px;
+}
+
+#roosterAfbeelding {
+    width: 100%;
+    height: auto;
+}
+
+#downloadRooster {
+    background-color: var(--THEME-RED); /* Red color matching the screenshot */
+    color: white; /* White text */
+    border: 2px solid var(--BG-DARK-BLUE);
+    padding: 10px 20px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    font-weight: bold;
+    margin: 10px 0;
+    cursor: pointer;
+    border-radius: 5px; /* Rounded corners */
+}
+
+#downloadRooster:hover {
+    color: var(--THEME-RED); /* Darker red on hover */
+    font-weight: bold;
+    background-color: var(--BG-DARK-BLUE);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.6);
+}
+
+.foutmeldingmail {
+    display: none;
+    color: white;
+    background-color:var(--BG-DARK-BLUE);
+    border: 1px solid #f5c6cb;
+    padding: 10px;
+    border-radius: 4px;
+    margin-top: 5px;
+    position: relative;
+    z-index: 10;
+}
+#downloadRooster {
+    background-color: var(--THEME-RED); /* Red color matching the screenshot */
+    color: white; /* White text */
+    border: 2px solid var(--BG-DARK-BLUE);
+    padding: 10px 20px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    font-weight: bold;
+    margin: 10px 0;
+    cursor: pointer;
+    border-radius: 5px; /* Rounded corners */
+}
+
+
+h4 .subtitle_h4 {
+    display: block;
+    font-size: 0.8em;
+    font-weight: lighter;
+    font-style: italic;
+}
+
+.subtitle {
+    display: block;
+    font-style: italic;
+    font-size: 1em;
+    color: #555; /* Adjust color as needed */
+    margin-top: -3px; /* Adjust to position the subtitle closer to the label */
+    margin-bottom: 8px; /* Adjust spacing between the subtitle and the next element */
+}
+
+h5{
+
+    font-size: 16px;
+    margin-top: 5px;
+    margin-bottom: 0;
+}
+
+.snacks-heading {
+    font-size: 1.2em;
+    text-align: center;
+    margin: 20px 0;
+    border: 5px solid var(--THEME-RED); /* Red border */
+    padding: 10px;
+    background-color: var(--BG-DARK-BLUE); /* Light grey background */
+    color: white; /* Dark blue text */
+}
+
+.subtitle {
+    display: block;
+    font-size: 0.9em;
+    color: #555; /* Adjust color as needed */
+    margin-top: -6px; /* Adjust to position the subtitle closer to the label */
+    margin-bottom: 8px; /* Adjust spacing between the subtitle and the next element */
+}
+
+.snack-option {
+    border: 1px solid #ccc; /* Light grey border */
+    padding: 10px;
+    margin-bottom: 15px;
+    background-color: #fff; /* White background */
+    border-radius: 5px;
+}
+
+.snack-option label {
+    display: block;
+    margin-bottom: 5px;
+    font-weight: bold;
+}
+
+.snack-option .subtitle {
+    display: block;
+    margin-top: -3px;
+    font-size: 0.9em;
+    font-style: italic;
+    color: #777;
+}
+
+.snack-option .input-group {
+    display: flex;
+    align-items: center;
+    margin-top: 10px;
+}
+
+.snack-option .input-group label {
+    margin: 0 10px 0 0;
+}
+
+.snack-option .input-group input[type="checkbox"] {
+    margin-right: 10px;
+}
+
+.snack-option .input-group input[type="number"] {
+    width: 60px;
+}
+
+.lunch-heading {
+    font-size: 1.2em;
+    text-align: center;
+    margin: 20px 0;
+    border: 5px solid var(--THEME-RED); /* Red border */
+    padding: 10px;
+    background-color: var(--BG-DARK-BLUE); /* Light grey background */
+    color: white; /* Dark blue text */
+}
+
+.lunch-section {
+    border: 1px solid #ccc; /* Light grey border */
+    padding: 20px;
+    margin-bottom: 20px;
+    background-color: #fff; /* White background */
+}
+
+.lunch-option {
+    margin-bottom: 10px;
+}
+
+
+input[type="checkbox"] {
+    -webkit-appearance: none;  /* Chrome, Safari, Opera */
+    -moz-appearance: none;     /* Firefox */
+    appearance: none;          /* Standaard specificatie */
+    width: 15px;  /* Maak de checkboxes kleiner */
+    height: 15px; /* Maak de checkboxes kleiner */
+    background-color: white; /* Achtergrondkleur 1 */
+    border: 3px solid var(--THEME-RED);
+    border-radius: 5px;  /* Rond de randjes af */
+    cursor: pointer;
+    margin: 0 5px 0 10px; /* Pas de marges aan zoals nodig */
+    position: relative;
+}
+
+input[type="checkbox"]:checked {
+    background-color: var(--BG-DARK-BLUE); /* Achtergrondkleur wanneer aangevinkt */
+    border: 3px solid white;
+}
+
+input[type="checkbox"]:checked::after {
+    content: "\2714"; /* Unicode-teken voor een vinkje */
+    color: white; /* Kleur van het vinkje */
+    font-size: 12px; /* Groote van het vinkje */
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+input[type="number"]:enabled {
+    min-width: 80px;
+    height: 45px;
+}
+
+input[type="number"]:disabled {
+    background-color: #f9f9f9; /* Lichte achtergrondkleur */
+    border: 2px solid #ddd; /* Lichtgrijze rand */
+    color: #aaa; /* Grijze tekstkleur */
+}
+
+input[type="number"]:disabled:hover {
+    background-color: #f2dede; /* Roodachtige achtergrondkleur bij hover */
+    border: 2px solid #ebccd1; /* Roodachtige rand bij hover */
+    color: #a94442; /* Rode tekstkleur bij hover */
+}
+
+.price-summary-section {
+    margin-top: 15px;
+}
+
+.price-summary-section h3{
+    font-size: 1.5em; /* Grotere lettergrootte */
+    color: var(--THEME-RED);   /* Gebruik dezelfde rode kleur als andere titels */
+    margin-bottom: 7px; /* Wat extra ruimte onder de titel */
+    text-transform: uppercase; /* Zorg ervoor dat de tekst in hoofdletters verschijnt */
+    font-weight: bold; /* Zorg voor een dikke tekst */
+}
+
+
+
+
+.price-summary-section .summary-category {
+    margin-bottom: 20px;
+}
+
+
+
+
+.price-summary-section .summary-category h4 {
+    font-size: 1em;
+    color: var(--THEME-RED);
+    margin-bottom: 10px;
+    font-weight: bold;
+}
+
+.price-summary-section .summary-category .summary-item {
+    display: flex;
+    justify-content: space-between;
+    padding: 5px 0;
+}
+
+.price-summary-section .summary-category .summary-item span {
+    font-size: 1.1em;
+    color: black;
+}
+
+.price-summary-section .total-price {
+    font-size: 1.7em;
+    text-transform: uppercase;
+    font-weight: bold;
+    margin-top: 20px;
+}
+
+#vragenOpmerkingen {
+    width: 100%;
+    background-color: white;
+    border: 2px solid var(--BG-DARK-BLUE);
+    border-radius: 5px;
+    padding: 10px;
+    font-size: 16px;
+    color: black;
+    transition: border-color 0.3s, background-color 0.3s;
+    box-sizing: border-box;
+    font-family: 'Avenir', sans-serif;
+    resize: none; /* Voorkomt dat de gebruiker het formaat van het tekstvak kan wijzigen */
+}
+
+#vragenOpmerkingen:hover {
+    border-color: var(--BG-DARK-BLUE);
+    background-color: rgba(8, 21, 64, 0.1);
+}
+
+#vragenOpmerkingen:focus {
+    border-color: var(--BG-DARK-BLUE);
+    outline: none;
+    background-color: rgba(8, 21, 64, 0.2);
+}
+
+#tekenTeller {
+    font-size: 14px;
+    color: #555;
+    margin-top: 5px;
+    text-align: right;
+    font-family: 'Avenir', sans-serif;
+}
+
+form button#verzendknop {
+    font-family: 'DarkForest', sans-serif !important; /* Zorgt ervoor dat het lettertype wordt toegepast */
+    font-size: max(30px) !important;
+    background-color: var(--BG-DARK-BLUE) !important; /* Achtergrondkleur */
+    color: white !important; /* Tekstkleur rood */
+    border-radius: 5px !important;
+    cursor: pointer !important;
+    display: inline-block !important; /* Houdt de knop in de stroom van het document */
+    margin: 20px auto !important; /* Maakt ruimte rond de knop en centreert hem */
+    transition: padding 0.3s ease, box-shadow 0.3s ease, background-color 0.3s ease !important;
+    box-sizing: border-box; /* Zorgt ervoor dat de outline geen invloed heeft op de grootte */
+}
+
+form button#verzendknop:hover {
+    background-color: #152036c0 !important; /* Blauwe kleur bij hover */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.8) !important; /* Schaduw bij hover */
+    outline: none !important; /* Verwijdert de rand bij hover */
+}
+
+
+/* Custom scrollbar styles */
+::-webkit-scrollbar {
+    width: 8px; /* Width of the scrollbar */
+    height: 8px; /* Height of the scrollbar */
+}
+
+::-webkit-scrollbar-thumb {
+    background-color: rgba(217, 49, 52, 0.9); /* 90% transparent red color for the scrollbar thumb */
+    border-radius: 5px; /* Rounded corners for the scrollbar thumb */
+    border: 2px solid transparent; /* Add some padding around the thumb */
+    background-clip: content-box; /* Clip the background of the thumb */
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background-color: rgba(177, 42, 42, 0.9); /* 90% transparent darker red when hovering */
+}
+
+::-webkit-scrollbar-track {
+    background-color: rgba(255, 255, 255, 0.5); /* 50% transparent white color for the scrollbar track */
+    border-radius: 5px; /* Rounded corners for the scrollbar track */
+}
+
+::-webkit-scrollbar-track:hover {
+    background-color: rgba(255, 255, 255, 0.7); /* Slightly less transparent white when hovering */
+}
+
+::-webkit-scrollbar-button {
+    background-color: var(--THEME-RED); /* Red color for the scrollbar buttons */
+    border-radius: 5px; /* Rounded corners for the scrollbar buttons */
+}
+
+::-webkit-scrollbar-button:hover {
+    background-color: var(--THEME-RED); /* Darker red when hovering */
+}
+
+/* Reset the default scrollbar styles */
+html {
+    scrollbar-width: thin; /* For Firefox */
+    scrollbar-color: rgba(217, 49, 52, 0.9) rgba(255, 255, 255, 0.5); /* For Firefox */
+}
+
+/* For Firefox */
+html::-webkit-scrollbar {
+    width: 8px;
+    height: 8px;
+}
+
+html::-webkit-scrollbar-thumb {
+    background-color: rgba(217, 49, 52, 0.9);
+    border-radius: 5px;
+}
+
+html::-webkit-scrollbar-track {
+    background-color: rgba(255, 255, 255, 0.5);
+    border-radius: 5px;
+}
+
+html::-webkit-scrollbar-button {
+    background-color: var(--THEME-RED);
+    border-radius: 5px;
+}
+
+
+
+.hover-message{
+    position: absolute;  /* Maakt het mogelijk de foutmelding los van de flow te plaatsen */
+    background-color: var(--BG-DARK-BLUE);
+    color: white;
+    padding: 5px 10px;
+    border-radius: 5px;
+    border: 1px solid white;
+    display: none; /* Verborgen als standaard */
+    z-index: 2000;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+    font-size: max(12px, 0.7vw);
+    transition: opacity 0.6s ease;
+    left: 0;  /* Plaatsing aan de linkerzijde van het inputveld */
+    top: -30px; /* Plaatsing net boven het inputveld, pas dit aan naar behoefte */
+    width: auto;  /* Zelfde breedte als het inputveld */
+    text-align: left; /* Zorg dat de tekst netjes uitlijnt */
+}
+
+.hover-message-agenda {
+    background-color: rgba(8, 21, 64, 0.9);
+    color: white;
+    padding: 10px;
+    border-radius: 5px;
+    border: 2px solid white;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    font-size: 14px;
+    display: block;
+    opacity: 1;
+    transition: opacity 0.6s ease;
+}
+
+#contact {
+    font-size: 14px;
+    color: #333;
+    margin-top: 15px;
+    text-align: left;
+    font-family: Arial, sans-serif;
+  }
+  
+  #contact p {
+    margin: 0;
+    padding-top: 5px;
+    font-size: 14px;
+    color: #333;
+  }
+  
+  #contact a {
+    color: #0056b3;
+    text-decoration: none;
+    font-weight: bold;
+    border-bottom: 1px solid #0056b3;
+    transition: all 0.3s ease;
+  }
+
+  
+  #contact a:hover {
+    color: var(--THEME-RED);
+    border-bottom: 1px solid var(--THEME-RED);
+    text-decoration: underline;
+  }
+  
+  .flatpickr-disabled {
+    opacity: 0.4;  /* Maak het element wat transparanter */
+    pointer-events: none; /* Zorg ervoor dat het element niet aanklikbaar is */
+}
+
+input.flatpickr-input {
+    min-width: 90%;
+}
+
+
+
+/* Stijl voor de login form */
+.login-form {
+    max-width: 400px; /* Beperk de breedte van het formulier */
+    margin: 50px auto; /* Centraal op de pagina */
+    background-color: #fff; /* Witte achtergrond voor het formulier */
+    padding: 20px;
+    border-radius: 5px;
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.1); /* Zachte schaduw */
+}
+
+/* Labels voor inputvelden */
+.login-form label {
+    display: block;
+    margin-bottom: 8px;
+    font-weight: bold;
+    color: var(--BG-DARK-BLUE);
+}
+
+/* Inputvelden */
+.login-form input[type="email"],
+.login-form input[type="password"] {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 15px;
+    border: 2px solid var(--BG-DARK-BLUE);
+    border-radius: 5px;
+    font-size: 16px;
+    background-color: white;
+    transition: border-color 0.3s ease, background-color 0.3s ease;
+}
+
+/* Hover en focus effecten voor inputvelden */
+.login-form input[type="email"]:hover,
+.login-form input[type="password"]:hover {
+    background-color: rgba(8, 21, 64, 0.1); /* Lichte blauwe achtergrond */
+}
+
+.login-form input[type="email"]:focus,
+.login-form input[type="password"]:focus {
+    border-color: #A6B1E1; /* Zachtere blauwe randkleur bij focus */
+    background-color: rgba(166, 177, 225, 0.15); /* Lichtere achtergrondkleur bij focus */
+    box-shadow: 0 0 8px rgba(166, 177, 225, 0.5); /* Zachte schaduw om het veld */
+    outline: none;
+    transition: all 0.3s ease; /* Voeg een vloeiende overgang toe voor een zachtere verandering */
+}
+
+
+/* Stijl voor de submit knop */
+.login-form .submit-button {
+    width: 100%;
+    padding: 12px;
+    background-color: var(--BG-DARK-BLUE);
+    color: white;
+    font-size: 18px;
+    font-weight: bold;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+/* Hover effect voor de submit knop */
+.login-form .submit-button:hover {
+    background-color: #152036c0; /* Iets donkerdere kleur bij hover */
+}
+
+
+/* || ------------- styling voor het dashboard ---------------------------*/
+
+
+/*body*/
+
+.body-dashboard {
+    font-family: 'Avenir', sans-serif;
+    display: flex;
+    flex-grow: 1 1 auto;
+    flex-direction: column;
+    min-height: 100vh;  /* Zorg ervoor dat de body altijd minimaal 100% van de viewport-hoogte inneemt */
+    margin: 0;
+    padding: 0;
+    background-color: #f9f9f9;
+    justify-content: center; /* Centreren over de verticale as */
+    align-items: center; /* Centreren over de horizontale as */
+    font-family: 'Avenir', sans-serif; /* Font voor consistentie */
+    min-width: 100%;
+    overflow-x: hidden;
+    padding-top: 100px;
+    
+}
+
+
+
+
+/*header*/
+
+.header-dashboard {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between; /* Plaatst de titel, navigatie en uitlogknop uit elkaar */
+    padding: 20px 20px; /* Ruimte boven en onder */
+    background-color: var(--BG-DARK-BLUE);
+    color: white;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 1000;
+    box-sizing: border-box;
+    border-bottom: 2px solid white;
+    white-space: nowrap;
+}
+
+.Title_Dashboard {
+    font-size: 1.8em;
+    margin:auto;
+    color: white;
+    display: block;
+    text-align: center;
+    max-width: 200px;
+    white-space: wrap;
+   
+}
+
+
+.Navbar-dashboard {
+    display: flex; /*flex direction is default row*/
+    flex-direction: column;
+    align-items: center;
+    flex-grow: 1;
+    min-height: 4rem;
+    box-sizing: border-box;
+ 
+}
+
+
+
+.Navbar-dashboard ul {
+    display: grid;
+    grid-template-rows: repeat(2, 1fr);
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1rem; /* Ruimte tussen de navigatielinks */
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    justify-content: space-evenly;
+    width: 100%;
+    justify-items: stretch; /* Zorg ervoor dat de links de volledige breedte van hun cel nemen */
+    grid-template-areas:
+    "item1 item2 item3"
+    "item4 . item5";
+}
+
+.Navbar-dashboard ul li:nth-child(1) {
+    grid-area: item1;
+}
+
+.Navbar-dashboard ul li:nth-child(2) {
+    grid-area: item2;
+}
+
+.Navbar-dashboard ul li:nth-child(3) {
+    grid-area: item3;
+}
+
+.Navbar-dashboard ul li:nth-child(4) {
+    grid-area: item4;
+}
+
+.Navbar-dashboard ul li:nth-child(5) {
+    grid-area: item5;
+}
+
+
+.Navbar-dashboard ul li {
+    display: flex;
+    justify-content: center;
+}
+
+.Navbar-dashboard ul li a {
+    text-decoration: none;
+    color: white;
+    font-weight: bold;
+    font-size: 1.1em;
+    padding-bottom: 5px;
+    position: relative;
+    width: auto;
+}
+
+.Navbar-dashboard ul li a:hover,
+.Navbar-dashboard ul li a:focus {
+    color: #e63946; /* Rode kleur bij hover zoals GeoFort Zakelijk */
+    border-bottom: 2px solid #e63946; /* Onderstreep in rode kleur */
+}
+
+.Navbar-dashboard .nav-link-active{
+    border-bottom: 2px solid white;
+}
+
+
+.uitlogKnopWrapper {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-width: 200px;
+    max-width: 200px;
+    padding: 0px;
+    margin: auto auto;
+}
+
+#Uitlog_Dashboard {
+    font-size: 1.2em;
+    padding: 15px;
+    background-color: var(--THEME-RED);
+    color: white;
+    border-radius: 5px;
+    text-decoration: none;
+    border: 2px solid white;
+    cursor: pointer;
+    transition: background-color 0.3s ease, box-shadow 0.3s ease;
+    margin: auto 1rem;
+    max-width: 100%;
+    display: block;
+   
+    
+}
+
+#Uitlog_Dashboard:hover {
+    background-color: var(--BG-DARK-BLUE);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    transform: scale(1.01);
+
+}
+
+
+
+
+
+.dashboard-form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    justify-self: center;
+    max-width: 100%;
+    min-width: 500px;
+    min-height: 360px;
+    height: auto;
+    margin: 20px 10px 30px;
+    background: #fff;
+    padding: 20px;
+    border-radius: 4px;
+    box-shadow: 0 1px 3px rgba(8, 21, 64, 0.8);
+  
+    background-image: url('./images/hoogtelijnen-1.png');
+    background-size: contain;  /* Zorgt ervoor dat de afbeelding de hele achtergrond vult */
+    background-position: center;  /* Plaatst de afbeelding in het midden van de achtergrond */
+    background-repeat: repeat;  /* Zorgt ervoor dat de afbeelding niet herhaald wordt */
+ 
+}
+
+.welcome-section {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.fieldset-dashboard {
+    margin: auto;
+    display: flex;
+    flex-direction: column;
+    height: auto;
+    min-width: 80%;
+    align-items: stretch;
+    border: 3px solid var(--BG-DARK-BLUE); /* Iets dunnere rand voor een subtielere look */
+    padding: 25px; /* Iets minder padding voor een compactere uitstraling */
+    background-color: var(--BG-FIELDSET-GRAY); /* Subtiele achtergrondkleur */
+    border-radius: 10px; /* Afgeronde hoeken voor een zachtere uitstraling */
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1); /* Lichte schaduw voor diepte */
+    transition: box-shadow 0.2s ease-in-out, transform 0.2s ease-in-out; /* Hover-effect */
+}
+
+.fieldset-dashboard:hover {
+    box-shadow: 0px 6px 12px rgba(0, 0, 0, 0.2); /* Diepere schaduw bij hover */
+    transform: translateY(-2px); /* Lichte lift bij hover */
+}
+
+
+.dashboard-legend {
+    font: 20px Avenir, sans-serif;
+    font-weight: 900;
+    color: white;
+    background: var(--BG-DARK-BLUE);
+    padding: 0.75rem; /* Iets meer padding voor betere leesbaarheid */
+    justify-content: center;
+    align-items: center;
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: row;
+    white-space: nowrap;
+    width: 100%;
+    border: 2px solid var(--BORDER-DASHBOARD-LEGEND); /* Iets dunnere rand voor subtielere look */
+    border-radius: 12px; /* Kleinere radius voor een zachtere afwerking */
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2); /* Toevoegen van een lichte schaduw voor diepte */
+    transition: transform 0.2s ease-in-out, box-shadow 0.2s ease-in-out; /* Smooth hover-effect */
+}
+
+.dashboard-legend:hover {
+    background-color: #1a3a66; /* Iets lichtere of donkerdere tint van de huidige kleur */
+    box-shadow: 0px 6px 12px rgba(0, 0, 0, 0.3); /* Diepere schaduw bij hover */
+}
+
+
+.mainContentBody {
+    display: flex;
+    padding: 20px;
+    min-width: 80%;
+    max-width: 90vw;
+    padding-bottom: 20px; 
+    align-items: center;
+    justify-content: center;
+    margin-top: 20px;
+    display: flex;
+    flex-direction: column;
+}
+
+
+
+/*-------------[Flatpickr input styling dasboard]--------------------- */
+#start_date {
+    min-width: 100%;
+    display: block;
+    padding: 10px;
+    margin-bottom: 10px;
+    border: 2px solid var(--BG-DARK-BLUE);
+    border-radius: 5px;
+}
+
+.calendar-day {
+    border-radius: 50px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: bold;
+    transition: box-shadow 0.3s ease, transform 0.3s ease;
+    transform: scale(0.9);
+}
+
+.calendar-day.multiple-schools.extraLayer {
+    color: white;
+    background-color: #081540;
+    border: 3px solid #B3CDE0;
+}
+
+.calendar-day.single-school.extraLayer {
+    color: white;
+    background-color: #B3CDE0;
+    border: 3px solid #081540;
+}
+
+.calendar-day.Selected.extraLayer{
+    font-weight: bold;
+    color: white;
+    border: 2px solid white;
+    background: linear-gradient(135deg, rgba(255, 215, 0, 0.7), rgba(8, 21, 64, 0.7)); /* Goud en donkerblauw */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.4); /* Donkere schaduw */
+}
+
+
+.calendar-day.multiple-schools.extraLayer.hoverOverCalenderDate,
+.calendar-day.single-school.extraLayer.hoverOverCalenderDate{
+    box-shadow : inset 4px 4px 10px rgba(179, 205, 224, 0.7);
+    transform : scale(1);
+    color: var(--BG-DARK-BLUE);
+    font-weight: 900;
+    background-color: #eeee;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/**styling voor het aanvragen overzicht*/
+
+/*main container*/
+.overviewRequestsWrapperContainer {
+    display: flex;
+    flex-direction: column;
+    justify-content: center; /*main axis dus Y*/
+    align-items: center; /*horzintale centrering is effectief als kindernen niet volledig breedte innemen*/
+    background-image: 
+        radial-gradient(circle, rgba(255, 255, 255, 0.8) 10%, rgba(255, 255, 255, 0.8) 90%), 
+        url('./images/GF-web-achtergrond-home-min2.png'); /* Achtergrond GeoFort */
+    background-size: 40%, 40%; /* Zorgt voor aparte schaal van de lagen */
+    background-position: center center; /* Centraal uitlijnen */
+    background-repeat: repeat;
+    padding: 30px 40px;
+    border-radius: 10px;
+    min-width: fit-content;
+    max-width: 90%;
+    box-shadow: 0px 2px 10px rgba(8, 21, 64, 0.8);
+    border: none;
+}
+
+.overviewRequestsWrapperContainer.downloadDataSetFromRange {
+    display: flex;
+    flex-direction: column;
+    justify-content: center; /*main axis dus Y*/
+    align-items: center; /*horzintale centrering is effectief als kindernen niet volledig breedte innemen*/
+    background-image: 
+        radial-gradient(circle, rgba(255, 255, 255, 0.8) 10%, rgba(255, 255, 255, 0.8) 90%), 
+        url('./images/GF-web-achtergrond-home-min2.png'); /* Achtergrond GeoFort */
+    background-size: 40%, 40%; /* Zorgt voor aparte schaal van de lagen */
+    background-position: center center; /* Centraal uitlijnen */
+    background-repeat: repeat;
+    padding: 30px 40px;
+    border-radius: 10px;
+    min-width: 800px;
+    max-width: 70%;
+    box-shadow: 0px 2px 10px rgba(8, 21, 64, 0.8);
+    border: none;
+}
+
+
+
+/*titel*/
+.overviewRequestsH2{
+    color: var(--BG-DARK-BLUE);
+    text-align: center;
+    font-weight: 900;
+    padding: 20px 0;
+    font-size: clamp(1rem, 2.5vw, 2rem);
+}
+/*titel*/
+.overviewRequestsH2.downloadDataSetFromRange{
+    color: var(--BG-DARK-BLUE);
+    text-align: center;
+    font-weight: 900;
+    padding: 20px 0;
+    font-size: clamp(1.5rem, 2vw, 1.9rem);
+    text-shadow: inset 0px 0px 3px  rgba(21, 66, 115, 1); 
+    max-width: 90%;
+}
+
+
+.date-group {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 20px; /* Iets minder marge voor strakkere opmaak */
+    padding: 20px; /* Minder padding voor compacter uiterlijk */
+    border-radius: 10px; /* Iets meer afronding voor modernere look */
+    background-image: 
+    radial-gradient(circle, rgba(255, 255, 255, 0.9) 91%, rgba(21, 66, 115, 0.1) 100%);
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Subtiele schaduw voor diepte */
+    min-width: 100%;
+    position: relative;
+}
+
+.bekijkDateGroup{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    min-width: 100%;
+    margin-bottom: 20px; /* Iets minder marge voor strakkere opmaak */
+    padding: 20px 20px; /* Minder padding voor compacter uiterlijk */
+    border-radius: 5px; /* Iets meer afronding voor modernere look */
+    background-image: 
+    radial-gradient(circle,  var(--THEME-RED) 95%, rgb(216, 33, 36) 100%);
+    position: relative;
+    box-shadow: 0px 1px 50px 15px rgba(255, 255, 255, 1);
+    border: 5px solid var(--BG-DARK-BLUE);
+}
+.bekijkDateGroup.downloadDataSetFromRange{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    max-width: 800px;
+    margin-bottom: 20px; /* Iets minder marge voor strakkere opmaak */
+    padding: 20px 20px; /* Minder padding voor compacter uiterlijk */
+    border-radius: 5px; /* Iets meer afronding voor modernere look */
+    background-image: 
+    radial-gradient(circle,  var(--THEME-RED) 95%, rgb(216, 33, 36) 100%);
+    position: relative;
+    box-shadow: 0px 1px 50px 15px rgba(255, 255, 255, 1);
+    border: 5px solid var(--BG-DARK-BLUE);
+}
+
+.bekijkDateGroup h4{
+    padding: 10px 15px;
+    border-radius: 8px 8px 0 0;
+    border: 3px solid #154273; 
+    border-bottom: 0px;
+    background-color: white;
+    font-size: 1.5em;
+    font-weight: 900;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+    margin: 0; /* Verwijder standaard marge */
+    text-align: center; /* Centreer de tekst binnen het h4-element */
+    min-width: 100%;
+
+}
+
+.date-group h4 {
+    /* Verwijder de positionering */
+    padding: 10px 15px;
+    border-radius: 8px 8px 0 0;
+
+    background-color: rgb(21, 66, 115); /* Donkerblauwe achtergrond voor contrast */
+    color: white;
+    font-size: 1.2em;
+    font-weight: bold;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    margin: 0; /* Verwijder standaard marge */
+    text-align: center; /* Centreer de tekst binnen het h4-element */
+  }
+
+/* Container voor elke aanvraag */
+.request-item.card {
+    display: flex; /*row flex*/
+    flex-wrap: nowrap; /*items schuiven een rij op als er geen ruimte is*/
+    justify-content: space-between;
+    box-sizing: border-box;
+    align-items: center;
+    column-gap: 25px;
+    min-width: 100%;
+    margin-bottom: 5px;
+    padding: 15px;
+    background-color: var(--BG-CARD);
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1); /* Vervang de rand door een zachte schaduw */
+    color: var(--TEXT-COLOR);
+    border-radius: 5px;
+    border-left: 3px solid #154273; 
+    border-right: 3px solid #154273; 
+    overflow: hidden;
+}
+
+.request-item.card-bekijk {
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: center;
+    row-gap: 15px;
+    margin-bottom: 5px;
+    padding: 15px;
+    background-color: var(--BG-CARD);
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1); /* Vervang de rand door een zachte schaduw */
+    color: var(--TEXT-COLOR);
+    border-radius: 5px;
+    border-left: 3px solid #154273; 
+    border-right: 3px solid #154273; 
+    box-sizing: border-box;
+    min-width: 100%;
+    overflow: hidden;
+}
+.request-item.card-bekijk.downloadDataSetFromRange {
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: center;
+    row-gap: 15px;
+    margin-bottom: 5px;
+    padding: 15px;
+    background-color: var(--BG-CARD);
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1); /* Vervang de rand door een zachte schaduw */
+    color: var(--TEXT-COLOR);
+    border-radius: 5px;
+    border: 5px solid #154273; 
+    box-sizing: border-box;
+    max-width: 800px;
+    overflow: hidden;
+}
+
+
+
+.request-item.card:last-of-type {
+    border-bottom: 5px solid #154273;
+    border-bottom-left-radius: 7px;
+    border-bottom-right-radius: 7px;
+}
+.request-item.card:first-of-type {
+    border-top-left-radius: 0px;
+    border-top-right-radius: 0px;
+}
+
+.request-item.card-bekijk:last-of-type {
+    border-bottom: 5px solid #154273;
+    border-bottom-left-radius: 7px;
+    border-bottom-right-radius: 7px;
+}
+.request-item.card-bekijk:first-of-type {
+    border-top-left-radius: 0px;
+    border-top-right-radius: 0px;
+}
+
+
+
+.request-item.containerWrapper {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 10px;
+    background-color: var(--BG-CARD);
+    border-radius: 5px;
+    max-width: 60%;
+    box-shadow: inset 0px 1px 10px 2px rgba(8, 21, 64, 1);
+    margin: auto 0;
+    min-height: 220px;
+}
+.request-item.containerWrapper__bekijk.downloadDataSetFromRange {
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: stretch;
+    padding: 20px;
+    background-color: var(--BG-CARD);
+    border-radius: 5px;
+    min-width: 100%;
+    box-shadow: inset 0px 1px 10px 2px rgba(8, 21, 64, 1);
+    margin: auto 0;
+    min-height: 220px;
+}
+
+.request-item.containerWrapper__bekijk {
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    align-items: stretch;
+    justify-content: center;
+    padding: 10px;
+    background-color: var(--BG-CARD);
+    border-radius: 5px;
+    min-width: 100%;
+    box-shadow: inset 0px 1px 10px 2px rgba(8, 21, 64, 1);
+    margin: auto 0;
+    min-height: 220px;
+}
+
+.request-item.container {
+    display: flex;
+    flex-direction: column;
+    align-items: stretch;
+    justify-content: space-between;
+    background-color: #fdfdfd;
+    box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.1);
+    border-radius: 8px;
+    padding: 10px;
+    height: 90%;
+    min-width: 90%;
+    margin: 0px auto;
+    row-gap: 10px;
+    min-height: 100%;
+
+}
+
+
+/* Aanpassen van de status sectie */
+/* Aanpassen van de status sectie */
+.request-item.status-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: stretch;
+    margin: 0;
+    border-radius: 5px;
+    box-sizing: border-box;
+    min-width: 40%;
+    max-width: 40%;
+    min-height: max-content;
+    box-shadow: 0px 0px 1px rgba(8, 21, 64, 0.5);
+    border-radius: 5px;
+    padding: 1px;
+    background-color: var(--BG-DARK-BLUE);
+    max-height: 220px;
+}
+
+.request-item.status-container h4:not(.date-group h4) {
+    margin: 0 0 10px 0;
+    font-size: 1.2em;
+    font-weight: bold;
+    color: var(--H4-COLOR);
+    text-align: left;
+    align-self: flex-start;
+}
+
+
+
+
+/* Styling voor de form */
+.request-item.form {
+    display: flex;
+    flex-direction: column; /* Plaatst de kinderen (label, select, button) onder elkaar */
+    row-gap: 0px;
+    align-items: stretch;
+    justify-content: space-between;
+    min-width: 100%; /* Zorgt ervoor dat het formulier de volledige breedte inneemt */
+    min-height: 100%; /* Zorgt ervoor dat het formulier de volledige hoogte van de container inneemt */
+    box-sizing: border-box; /* Houdt rekening met padding en border in de totale afmetingen */
+    border-radius: 5px; /* Rondere hoeken voor een moderne uitstraling */
+    background-color: #fdfdfd; /* Achtergrondkleur van het formulier */
+    margin: 0;
+    box-shadow: 1px 1px 10px rgba(8, 21, 64, 0.5); /* Voegt een schaduw toe voor diepte */
+    min-height: 218px;
+    max-height: 100%;
+  }
+
+/* Styling voor de form */
+.request-item.form__bekijk {
+    display: flex;
+    flex-direction: column; /* Plaatst de kinderen (label, select, button) onder elkaar */
+    row-gap: 10px;
+    align-items: center;
+    justify-content: space-between;
+    min-width: fit-content;
+    background-image: url('./images/hoogtelijnen-1.png');
+    background-size: contain;  /* Zorgt ervoor dat de afbeelding de hele achtergrond vult */
+    background-position: center;  /* Plaatst de afbeelding in het midden van de achtergrond */
+    background-repeat: repeat;  /* Zorgt ervoor dat de afbeelding niet herhaald wordt */
+    min-height: 100%; /* Zorgt ervoor dat het formulier de volledige hoogte van de container inneemt */
+    box-sizing: border-box; /* Houdt rekening met padding en border in de totale afmetingen */
+    border-radius: 5px; /* Rondere hoeken voor een moderne uitstraling */
+    background-color: #fdfdfd; /* Achtergrondkleur van het formulier */
+    margin: 0;
+    box-shadow: inset 0 1px 10px 1px rgba(8, 21, 64, 0.8);
+    min-width: 90%;
+    min-height: fit-content;
+    max-height: 100%;
+    padding: 2rem;
+  }
+
+  /* Styling voor de form */
+.request-item__bekijk {
+    display: flex;
+    flex-direction: column; /* Plaatst de kinderen (label, select, button) onder elkaar */
+    row-gap: 0px;
+    align-items: center;
+    justify-content: stretch;
+    min-width: 100%; /* Zorgt ervoor dat het formulier de volledige breedte inneemt */
+    min-height: fit-content; /* Zorgt ervoor dat het formulier de volledige hoogte van de container inneemt */
+    box-sizing: border-box; /* Houdt rekening met padding en border in de totale afmetingen */
+    border-radius: 5px; /* Rondere hoeken voor een moderne uitstraling */
+    background-color: #fdfdfd; /* Achtergrondkleur van het formulier */
+    margin: 0;
+    box-shadow: 1px 1px 10px rgba(8, 21, 64, 0.5); /* Voegt een schaduw toe voor diepte */
+    min-height: 218px;
+    max-height: 100%;
+  }
+
+
+
+
+  
+  .request-item.form label,
+  .request-item.form select,
+  .request-item.form button {
+    width: 100%; /* Laat de elementen de volledige breedte van het formulier innemen */
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+  }
+
+  .request-item.form select {
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+    display: flex;
+    flex-direction: column;
+    align-items: stretch;
+    justify-content: stretch;
+    gap: 2px;
+    height: auto;
+    padding: 0px;
+    border: 2px solid #154273; /* Gebruik dezelfde kleur als de rand */
+    border-radius: 0px; /* Rond de hoeken af zoals de rest */
+    background-color: #f5f5f5; /* Lichtgrijze achtergrond voor consistentie */
+    font-size: 16px; /* Zorg dat de tekst leesbaar is */
+    box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.1); /* Subtiele schaduw voor diepte */
+    cursor: pointer; /* Toon een klikbare cursor */
+    background: none;
+    text-align: center;
+    flex-grow: 1;
+}
+  .request-item.form.selectExtraHeight select {
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+    display: flex;
+    flex-direction: column;
+    align-items: stretch;
+    justify-content: stretch;
+    gap: 2px;
+    min-height: 150px;
+    height: auto;
+    padding: 0px;
+    border: 2px solid #154273; /* Gebruik dezelfde kleur als de rand */
+    border-radius: 0px; /* Rond de hoeken af zoals de rest */
+    background-color: #f5f5f5; /* Lichtgrijze achtergrond voor consistentie */
+    font-size: 16px; /* Zorg dat de tekst leesbaar is */
+    box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.1); /* Subtiele schaduw voor diepte */
+    cursor: pointer; /* Toon een klikbare cursor */
+    background: none;
+    text-align: center;
+    flex-grow: 1;
+}
+
+
+.aantalLeerlingenInput {
+    display: inline-flex;
+    flex-direction: column;
+    align-items: center;
+    position: relative;
+  }
+  
+  .aantalLeerlingenInput input[type="number"] {
+    -webkit-appearance: none;
+    -moz-appearance: textfield;
+    appearance: none;
+    display: flex;
+    border: 5px solid double #154273;
+    border-radius: 0;
+    background-color: #f5f5f5;
+    font-size: 32px;
+    text-align: center;
+    padding: 10px;
+    color: var(--BG-DARK-BLUE);
+    width: 100px;
+    box-sizing: border-box;
+    justify-content: center;
+    align-items: center;
+  }
+
+
+
+.aantalLeerlingenInput:hover {
+    background: linear-gradient(135deg, var(--BG-DARK-BLUE), #1e3c72, #2a5298);
+    border: 4px double white; /* Witte rand bij hover */
+    color: white;
+    box-shadow: 0px 4px 6px rgba(255, 255, 255, 0.6); /* Sterkere schaduw */
+}
+
+.aantalLeerlingenInput:focus {
+    outline: none;
+    border-color: var(--BG-STATUS);
+    box-shadow: 0px 6px 10px rgba(0, 51, 102, 0.7); /* Blauwe highlight */
+}
+
+.aantalLeerlingenInput::-webkit-inner-spin-button,
+.aantalLeerlingenInput::-webkit-outer-spin-button {
+    -webkit-appearance: none; /* Verwijdert standaard spin-button styling */
+    appearance: none;
+}
+
+.aantalLeerlingenInput .spin-button {
+    background-color: #154273;
+    color: white;
+    border: 2px solid var(--BG-DARK-GRAY-BLUE);
+    width: 100%;
+    padding: 5px 0;
+    cursor: pointer;
+    font-size: 22px;
+    transition: background-color 0.3s;
+  }
+  
+ .spin-up {
+    border-bottom: 1px solid #f5f5f5;
+  }
+  
+ .spin-down {
+    border-top: 1px solid #f5f5f5;
+  }
+  
+  .spin-button:hover {
+    background-color: #1e3c72;
+    color: white;
+  }
+
+
+
+
+
+/* Hover effect */
+.request-item.form select:hover {
+    background-color: #e6f0fa; /* Lichtblauwe achtergrond bij hover */
+    color: #154273; /* Blauwe tekst blijft consistent */
+    border-color: #003366; /* Donkerdere blauw voor accent */
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.6); /* Sterkere schaduw voor diepte */
+}
+
+/* Focus effect */
+.request-item.form select:focus {
+    background-color: #f0f8ff; /* Heel subtiele blauw-witte tint bij focus */
+    color: #003366; /* Donkere blauwe tekst voor betere leesbaarheid */
+    border-color: #003366; /* Consistente blauwe rand */
+    box-shadow: 0px 0px 10px rgba(0, 51, 102, 0.7); /* Blauwe highlight */
+    outline: none; /* Verwijder standaard focus-outline */
+}
+   
+
+.request-item.form select option {
+    box-shadow: 0px 1px 3px rgba(8, 21, 64, 0.3); /* Voegt een schaduw toe voor diepte */
+    padding: 15px;
+    background-color: whitesmoke;
+    border-radius: 1px;
+    min-width: 100%;
+    flex-grow: 1;
+}
+
+
+
+
+
+  
+
+.request-item.form label {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    margin: 0px;
+    padding: 15px;
+    border-radius: 5px 5px 0 0;
+    background-color: rgb(21, 66, 115); /* Donkerblauwe achtergrond voor contrast */
+    color: white;
+    font-size: 1.2em;
+    font-weight: bold;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+
+
+.dashboardKnopOverviewRequests{
+    min-width: 100%;
+    background-color:  rgb(21, 66, 115);
+    color: white;
+    font-size: 18px;
+    font-weight: bold;
+    border: 2px solid var(--BG-DARK-BLUE); /* Blauwe rand voor consistentie */
+    border-radius: 0px;
+    border-bottom-right-radius:  5px; /* Afgeronde hoeken zoals de rest */
+    border-bottom-left-radius:  5px; /* Afgeronde hoeken zoals de rest */
+    padding: 10px 0; /* Ruimte binnen de knop */
+    cursor: pointer;
+    display: block; /* Zorgt voor volledige breedte */
+    transition: all 0.3s ease; /* Soepele animatie */
+}
+.dashboardKnopOverviewRequests:hover, .dashboardKnopOverviewRequests:hover {
+    background-color: white;
+    color: var(--BG-DARK-BLUE);/* Witte tekst voor contrast bij hover */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Subtiele schaduw voor diepte */
+    border: 2px solid var(--BG-DARK-BLUE);
+}
+.dashboardKnopOverviewRequests:active {
+    background-color: white;
+    color: var(--BG-DARK-BLUE);/* Witte tekst voor contrast bij hover */
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 1); /* Subtiele schaduw voor diepte */
+    border: 2px solid var(--BG-DARK-BLUE);
+}
+
+
+.request-item.para-bekijk {
+    flex: 1 1 100%;
+    min-width: 100%;
+    margin-bottom: 3px;
+    font-size: 1em;
+    font-weight: bold;
+    color: var(--BG-DARK-BLUE); /* Donkerblauwe tekstkleur voor consistentie */
+    padding: 5px;
+    background-color:  #fdfdfd;
+    border: 2px solid  var(--BG-DARK-BLUE);
+    margin-right: 6px;
+    border-radius: 4px;
+   
+}
+.request-item.para-bekijk.downloadDataSetFromRange {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around; /* Zet key en value aan weerszijden */
+    align-items: center;
+    flex-wrap: nowrap; /* Zorgt dat bij weinig ruimte de value naar beneden kan */
+    min-width: 100%;
+    margin-bottom: 3px;
+    font-size: 1em;
+    font-weight: bold;
+    color: var(--BG-DARK-BLUE);
+    padding: 5px;
+    background-color: #fdfdfd;
+    border: 2px solid var(--BG-DARK-BLUE);
+    margin-right: 6px;
+    border-radius: 4px;
+    text-align: left;
+    font-size: clamp(1rem, 1.6vw, 1.2rem);
+}
+
+.request-label {
+    flex: 1 1 95%;
+    font-weight: 900;
+}
+
+.request-value {
+    flex-grow: 1;
+    text-align: right; /* Zet de waarde aan de rechterkant */
+    font-weight: bold;
+}
+
+
+.request-item.para-bekijk.downloadDataSetFromRange:hover {
+    background-color: #d0d8e8; /* Lichte tintverandering bij hover */
+    color: #fdfdfd;
+    background-color:  var(--BG-DARK-BLUE);
+    font-size: clamp(1rem, 1.6vw, 1.2rem);
+
+   
+}
+
+.request-item.para-bekijk:hover {
+    background-color: #d0d8e8; /* Lichte tintverandering bij hover */
+    font-size: 1.05em;
+    color: #fdfdfd;
+    background-color:  var(--BG-DARK-BLUE);
+}
+   
+
+
+/* Stilering voor de schoolinfo */
+.request-item.para {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    flex-wrap: wrap;
+    white-space: pre-line;
+    flex: 1 1 100%; 
+    font-size: clamp(9px 0.8vw, 12px);
+    font-weight: bold;
+    color: var(--BG-DARK-BLUE);
+    padding: 7px;
+    background-color: white;
+    border: 3px solid var(--BG-DARK-BLUE);
+    margin: 0px;
+    border-radius: 6px;
+   
+}
+
+
+
+
+
+.request-item.para:hover {
+    background-color: #d0d8e8; /* Lichte tintverandering bij hover */
+}
+
+
+
+.overview-section-dashboard h4:not(.date-group h4) {
+    font-size: 1.4em;
+    font-weight: bold;
+    margin-bottom: 15px;
+    color: var(--BG-DARK-BLUE); /* Donkerblauw voor consistentie */
+    text-align: center;
+}
+
+#date-picker {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+.dashboardKnop{
+    min-width: 100%;
+    background-color: var(--THEME-RED);
+    color: white;
+    font-size: 18px;
+    font-weight: bold;
+    border: none;
+    border-radius: 5px;
+    padding: 10px 0;
+    margin-top: 10px;
+    cursor: pointer;
+    border: 1px solid var(--BG-DARK-BLUE);
+    display: block;
+}
+
+.dashboardKnop:hover {
+    background-color: var(--BG-DARK-BLUE);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    outline: 2px solid var(--GOLDEN-HIGHLIGHT);
+    border:none;
+}
+
+
+
+.info_wijzig_aantallen {
+    border-bottom: 2px solid white;
+    position: relative;
+    color: var(--GOLDEN-HIGHLIGHT);
+    cursor:pointer;
+  }
+  
+.info_wijzig_aantallen:hover::before {
+    content: attr(data-info-tip);
+    position: absolute;
+    top: -50px;
+    left: -180px;
+    white-space: nowrap;
+    background: var(--BG-DARK-BLUE);
+    padding: 1em;
+    border-radius: 15px;
+    border: 2px solid var(--GOLDEN-HIGHLIGHT);
+    font-size: 0.8rem;
+    font-weight: 900;
+    color: white;
+    
+  }
+  
+
+
+/* Algemene stijl voor meldingen */
+.general-message {
+    display: none;
+    color: white;
+    padding: 10px;
+    border-radius: 4px;
+    margin-top: 5px;
+    max-width: inherit;
+    min-width: fit-content;
+    font-weight: bold;
+}
+
+/* Specifieke stijl voor succesmeldingen (blauw) */
+.general-message.success {
+    background-color: var(--BG-DARK-BLUE); /* Donkerblauw */
+    border: 1px solid #007bff;
+}
+
+/* Specifieke stijl voor foutmeldingen (rood) */
+.general-message.error {
+    background-color: white; /* Rood */
+    border: 3px solid #ff4c4c;
+    color: black;
+}
+
+.change-status-message-flexContainer{
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: stretch;
+    min-width: fit-content;
+    max-width: 100%;
+    height: auto;
+}
+
+.generalFlashmessageWrapper{
+    position: relative;
+    display: flex;
+    justify-content: stretch;
+    align-items: center;
+    min-width: 100%;
+    height: auto;
+}
+.absolute-positioned-General {
+    position: absolute;
+    top: 0; /* Plaats binnen de wrapper */
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+.absolute-positioned-General__numberOfStudents {
+    position: absolute;
+    top: -50px; /* Plaats binnen de wrapper */
+    left: 50%;
+    transform: translateX(-50%);
+    min-width: 220px;
+    min-height: fit-content;
+    height: auto;
+    background-color: none;
+}
+.absolute-positioned-General__numberOfStudents-FromServer {
+    position: absolute;
+    top:  0px; /* Plaats binnen de wrapper */
+    left: 50%;
+    transform: translateX(-50%);
+    min-width: 220px;
+    min-height: fit-content;
+    height: auto;
+    background-color: none;
+}
+
+.absolute-positioned {
+    position: absolute;
+    top: 0; /* Plaats binnen de wrapper */
+    left: 0;
+
+}
+
+.flash-in-option-message {
+    display: none; /* Verberg standaard */
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    padding: 15px;
+    border-radius: 5px;
+    box-shadow: 0 4px 6px rgba(255, 255, 255, 0.1);
+    font-size: 16px;
+    font-weight: 700;
+    margin-bottom: 15px; /* Voor ruimte tussen meldingen en andere content */
+    transition: opacity 1s ease-in-out; /* Subtiele fade-in en fade-out animatie */
+    z-index: 3;
+    width: fit-content;
+}
+
+/*specfic styling for js feedback on number input*/
+.flash-numberofStudents-message  {
+    display: none; /* Verberg standaard */
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    padding: 15px;
+    border-radius: 5px;
+    box-shadow: 0px 1px 3px rgba(8, 21, 64, 0.3);
+    font-size: 16px;
+    font-weight: 700;
+    margin-bottom: 15px; /* Voor ruimte tussen meldingen en andere content */
+    transition: opacity 1s ease-in-out; /* Subtiele fade-in en fade-out animatie */
+    z-index: 3;
+    min-width: 220px;
+    height: auto;
+    overflow: visible;
+}
+
+.flash-in-option-message.success, .flash-numberofStudents-message.success  {
+    background: radial-gradient(circle,  rgba(226, 237, 247, 0.95) 0%, white 97%, #1e3c72 100%);
+    color: var(--BG-DARK-BLUE);
+    border: 4px solid var(--BG-DARK-BLUE);
+    text-align: center;
+    border-radius: 10px;
+    padding: 20px;
+}
+
+
+
+.flash-in-option-message.error, .flash-numberofStudents-message.error{
+    background-color: var(--THEME-RED); /* Thema rood voor foutmeldingen */
+    color: white; /* Witte tekst voor contrast */
+    border: 1px solid var(--THEME-RED); /* Match de rand met de achtergrondkleur */
+    text-align: center;
+}
+
+.flash-in-option-message.fade-out {
+    opacity: 0; /* Maak onzichtbaar */
+}
+
+.flash-message {
+    display: none; /* Verberg standaard */
+    justify-content: top;
+    align-items: center;
+    text-align: start;
+    padding: 15px;
+    border-radius: 5px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    font-size: 14px;
+    font-weight: 700;
+    margin-bottom: 15px; /* Voor ruimte tussen meldingen en andere content */
+    transition: opacity 1s ease-in-out; /* Subtiele fade-in en fade-out animatie */
+    z-index: 3;
+    width: 100%;
+    overflow: visible;
+    flex-wrap: wrap;
+}
+
+.flash-message.success {
+    background-color: var(--BG-DARK-BLUE); /* Lichtblauw voor succes */
+    color: whitesmoke;
+    border: 3px solid white;
+}
+
+.flash-message.error {
+    background-color: var(--THEME-RED); /* Thema rood voor foutmeldingen */
+    color: white; /* Witte tekst voor contrast */
+    border: 2px solid white;
+}
+
+.flash-message.fade-out {
+    opacity: 0; /* Maak onzichtbaar */
+}
+
+.flash-message-alternative {
+    justify-content: center;
+    align-items: center;
+    min-width: fit-content;
+    position: relative;
+    box-sizing: border-box;
+    align-content: center;
+    align-self: center;
+    text-decoration: center;
+}
+
+
+
+
+
+
+
+.footer_dashboard {
+    background-color: var(--BG-DARK-BLUE);  /* GeoFort's donkerblauwe kleur */
+    color: white;
+    min-height: 80px;
+    left: 0px;
+    position: relative;
+    display: flex;
+    text-align: center;
+    width: 110vw;
+    box-sizing: border-box; /* Zorgt ervoor dat de padding binnen de breedte van de footer valt */
+    bottom: -50px;
+    margin-top: 30px;
+    justify-content: center;  /* Centreert de inhoud horizontaal */
+    align-items: center;  /* Centreert de inhoud verticaal */
+}
+
+.date-error:focus {
+    outline: 2px solid #ff9900; /* Oranje rand bij focus */
+}
+
+
+
+#aanvragenInfo{
+    max-width: 400px;
+    font-size: 1.1em;
+}
+
+#aanvrageninoptieInfo, #dagaanvragenInfo,#dagselectstatus_aanvragenInfo{
+    max-width: 400px;
+    font-size: 1.1em;
+}
+
+#dagaanvragenOverzicht{
+    max-width: 500px;
+    min-width: 500px;
+    font-size: 1.1em;
+    padding-bottom: 3px;
+}
+
+.main-footer {
+    background-color: var(--BG-DARK-BLUE);  /* GeoFort's donkerblauwe kleur */
+    color: white;
+    min-height: 80px;
+    left: -80px;
+    position: relative;
+    display: flex;
+    text-align: center;
+    width: 105vw;
+    box-sizing: border-box; /* Zorgt ervoor dat de padding binnen de breedte van de footer valt */
+    bottom: -50px;
+    margin-top: 30px;
+    justify-content: center;  /* Centreert de inhoud horizontaal */
+    align-items: center;  /* Centreert de inhoud verticaal */
+}
+
+.toBottom{
+    bottom: -50px;
+    justify-self: end;
+    display: flex;
+
+
+}
+
+
+
+.footer-logo-container {
+    display: inline-block;  /* Zorg ervoor dat de container de grootte van de inhoud (het logo) aanneemt */
+    position: absolute;
+    right: 180px; /* Plaatsing van het logo aan de rechterkant */
+    bottom: 20px;
+}
+
+.footer-logo {
+    width: 85px; /* Pas de grootte van het logo aan */
+}
+
+
+
+#copy_logo {
+    margin: 0;
+    text-align: center;
+}
+
+.request-item.checkbox-container {
+    display: grid;
+    grid-template-columns: 4fr 1fr;
+    align-items: center;
+    gap: 10px;
+    margin-top: 10px;
+    padding: 10px;
+    border: 4px solid var(--THEME-RED);
+    border-radius: 5px;
+    background-color: var(--BG-FIELDSET-GRAY);
+}
+.request-item.checkbox-container.Checked {
+    border: none;
+    background-color: whitesmoke;
+    box-shadow: inset 0px 0px 10px 1px rgb(21, 66, 115);
+}
+.request-item.checkbox-container {
+    display: grid;
+    grid-template-columns: 4fr 1fr;
+    align-items: center;
+    gap: 10px;
+    margin-top: 10px;
+    padding: 10px;
+    border: 4px solid var(--THEME-RED);
+    border-radius: 5px;
+    background-color: var(--BG-FIELDSET-GRAY);
+}
+
+.request-item.checkbox-container label {
+    grid-column:  1;
+    background-color: var(--BG-CARD);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: 10px;
+    border-radius: 10px;
+    border: 3px double var(--THEME-RED);
+    box-shadow:  0 0px 1px rgba(0, 0, 0, 0.3); /* Subtiele schaduw */
+    
+}
+
+.input-label.checkedForDownload.extraClass {
+    border: 2px solid white;
+    background-color: var(--BG-DARK-BLUE);
+    color: white;
+
+}
+
+
+/* Checkbox stijlen */
+.overzicht-checkbox {
+    grid-column: 2;
+    appearance: none;
+    border: 2px solid var(--BG-DARK-BLUE);
+    border-radius: 4px;
+    position: relative;
+    cursor: pointer;
+    outline: none;
+    transition: background-color 0.3s ease, border-color 0.3s ease;
+}
+
+/* Stijl voor de checkbox als deze is aangevinkt */
+.overzicht-checkbox:checked {
+    background-color: var(--THEME-RED); /* Rode kleur als geselecteerd */
+    border-color: var(--THEME-RED);
+}
+
+/* Pseudo-element voor vinkje */
+.overzicht-checkbox:checked::after {
+    content: '✔';
+    color: white;
+    font-size: 14px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+#status_select{
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    font-size: 1.1em;
+
+}
+
+#status-select{
+   padding-bottom: 10px;
+}
+
+.logOutForm.dashBoard{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: transparent;
+    margin: auto 1rem;
+}
+
+
+.Uitlog_Dashboard {
+    font-size: 1.2em;
+    padding: 15px;
+    background-color: var(--THEME-RED);
+    color: white;
+    border-radius: 5px;
+    text-decoration: none;
+    border: 2px solid white;
+    cursor: pointer;
+    transition: background-color 0.3s ease, box-shadow 0.3s ease;
+    margin: auto 1rem;
+    max-width: 100%;
+    display: block;
+   
+    
+}
+
+.Uitlog_Dashboard:hover {
+    background-color: var(--BG-DARK-BLUE);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    transform: scale(1.01);
+
+}
+
+@media screen and (max-width: 1100px) {
+
+/**||----[online aanvraagformulier]--||*/
+
+/*download grid bij geen verbinding met db*/
+
+.download-grid {
+    display: grid;
+    grid-template-rows: repeat(3, 1fr); /*row om te gaan stacken*/
+    grid-template-columns: 1fr;
+    gap: 20px;
+    padding: 1rem;
+    background: var(--BG-FIELDSET-GRAY);
+    border: 4px solid var(--BG-DARK-BLUE);
+    border-radius: 10px;
+    min-width: 90%;
+    text-align: center;
+}
+
+
+.download-item {
+    display: grid;
+    grid-template-rows: repeat(auto, 1fr); /*row om te gaan stacken*/
+    grid-template-columns: repeat(auto, 1fr); 
+    padding: 10px;
+    background-color: white;
+    border-radius: 10px;
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.download-label {
+    grid-row: 1;
+    grid-column: 1 / span 2;
+    font-size: 1.2rem;
+    font-weight: bold;
+    margin-bottom: 10px;
+    min-width: 100%;
+    background-color: #333;
+    color: var(--THEME-RED);
+    padding: 0.5rem 0;
+    border-radius: 10px;
+}
+
+.download-image {
+    grid-column: 1;
+    flex-shrink: 1;
+    min-width: 100px;
+    width: 60%;
+    height: auto;
+    min-height: 80%;
+    margin-bottom: 10px;
+}
+
+.download-Form {
+    display: flex;
+    flex-shrink: 1;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    grid-column: 2;
+    min-width: 150px;
+    width: auto;
+    height: 100%;
+    justify-self: end;
+    
+
+}
+
+
+
+.download-button:hover {
+    background-color: var(--BG-DARK-BLUE);
+    color: var(--THEME-RED);
+}
+
+
+ .Navbar-dashboard a:not(.nav-link-active){
+    display:none;
+    margin: 0;
+    padding: 0;
+    gap: none;
+ }
+
+ 
+
+ .Navbar-dashboard{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+ }
+
+ .Navbar-dashboard ul {
+    display: flex;
+    flex-direction: row;
+    list-style: none;
+    padding: 0;
+    justify-content: space-between;
+    align-items: center;
+    width: fit-content;
+    margin: auto;
+    gap: 0px;
+    text-align: center;
+}
+
+.Navbar-dashboard a.nav-link-active{
+    text-align: center;
+ }
+
+
+
+
+ h1.Title_Dashboard {
+    display: flex;
+    font-size: 1.8em;
+    margin: 0;
+    color: white;
+    text-align: center; /* Uitlijning naar links */
+    min-width: 200px;
+    
+}
+
+.header-dashboard {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around; /*Plaatst de titel, navigatie en uitlogknop uit elkaar */
+    max-width:100vw;
+    overflow: hidden;
+    align-items: center;
+    box-sizing: border-box;
+    padding: 1rem;
+    
+}
+
+.request-item.card {
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: center;
+    column-gap: 10px;
+    row-gap: 15px;
+    margin-bottom: 5px;
+    padding: 15px;
+    background-color: var(--BG-CARD);
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1); /* Vervang de rand door een zachte schaduw */
+    color: var(--TEXT-COLOR);
+    border-radius: 5px;
+    border-left: 3px solid #154273; 
+    border-right: 3px solid #154273; 
+    box-sizing: border-box;
+    min-width: 100%;
+    min-height: max-content;
+}
+
+
+
+.request-item.status-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    min-width: 100%;
+    min-height: max-content;
+}
+
+.request-item.status-container-bekijk {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: stretch;
+    min-width: 100%;
+    min-height: auto;
+}
+
+.request-item.containerWrapper {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    border-radius: 5px;
+    min-width: 100%;
+    margin: auto 0;
+}
+
+.logOutForm.dashBoard{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: transparent;
+    margin: auto 1rem;
+}
+
+.request-item.form.selectExtraHeight select{
+    max-height: 50px;
+}
+
+
+.Uitlog_Dashboard {
+    font-size: 1.2em;
+    padding: 15px;
+    background-color: var(--THEME-RED);
+    color: white;
+    border-radius: 5px;
+    text-decoration: none;
+    border: 2px solid white;
+    cursor: pointer;
+    transition: background-color 0.3s ease, box-shadow 0.3s ease;
+    margin: auto 1rem;
+    max-width: 100%;
+    display: block;
+   
+    
+}
+
+.Uitlog_Dashboard:hover {
+    background-color: var(--BG-DARK-BLUE);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    transform: scale(1.01);
+
+}
+
+
+/* 
+* Flexbox en CSS Grid: Rijen, Kolommen en Richtingen
+* Hier is een uitgebreide uitleg van de verschillen en hoe je beide tools optimaal kunt gebruiken.
+*/
+
+/* === FLEXBOX: HOOFD-AS EN KRUIS-AS ===
+* Flexbox werkt op basis van assen:
+    - Hoofd-as: De richting waarin de items worden geplaatst.
+    - Kruis-as: De as loodrecht op de hoofd-as.
+
+* De richting van de hoofd-as wordt bepaald door `flex-direction`:
+    - `row` (standaard): Hoofd-as is horizontaal (X-as), items bewegen van links naar rechts.
+    - `column`: Hoofd-as is verticaal (Y-as), items bewegen van boven naar beneden.
+
+* De kruis-as werkt automatisch op basis van de hoofd-as:
+    - Bij `row` is de kruis-as verticaal (Y-as).
+    - Bij `column` is de kruis-as horizontaal (X-as).
+
+! Flexbox is ideaal voor 1D lay-outs waarin je dynamisch items wilt ordenen langs een enkele as.
+*/
+
+/* === CSS GRID: RIJEN EN KOLOMMEN ===
+* CSS Grid is gebaseerd op een raster van rijen en kolommen:
+    - Rijen (`rows`) zijn verticaal (Y-as).
+    - Kolommen (`columns`) zijn horizontaal (X-as).
+
+* In CSS Grid definieer je expliciet de structuur:
+    - `grid-template-rows`: Beheert de hoogte van de rijen (Y-richting).
+    - `grid-template-columns`: Beheert de breedte van de kolommen (X-richting).
+
+* In tegenstelling tot Flexbox zijn rijen en kolommen in Grid altijd duidelijk en vastgelegd.
+
+! CSS Grid is ideaal voor 2D lay-outs waarin je statisch of dynamisch meerdere assen tegelijk wilt beheren.
+*/
+
+/* === BELANGRIJKE VERSCHILLEN ===
+1. Flexbox richt zich op de assen:
+    - Hoofd-as en kruis-as veranderen afhankelijk van `flex-direction`.
+    - Dynamisch geschikt voor een enkele rij of kolom.
+
+2. CSS Grid richt zich op structuren:
+    - Rijen (Y-richting) en kolommen (X-richting) zijn expliciet en vastgelegd.
+    - Geschikt voor complexe rasterlay-outs met meerdere dimensies.
+*/
+
+/* === MENTALE MODELLEN VOOR HERINNERING ===
+* Denk bij Flexbox aan een "distributielijn":
+    - Items worden dynamisch geplaatst langs een enkele as.
+    - Hoofd-as en kruis-as veranderen afhankelijk van `flex-direction`.
+
+* Denk bij CSS Grid aan een "Excel-tabel":
+    - Rijen bewegen verticaal (van boven naar beneden).
+    - Kolommen bewegen horizontaal (van links naar rechts).
+
+! Deze modellen helpen je om intuïtief te begrijpen hoe Flexbox en CSS Grid werken.
+*/
+
+/* === SAMENVATTING ===
+* Gebruik Flexbox voor 1D lay-outs en dynamische as-gebaseerde positionering.
+* Gebruik CSS Grid voor 2D lay-outs en tabelachtige rasterstructuren.
+*/
+
+
+
+
+
+
+
+}

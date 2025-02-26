@@ -79,6 +79,7 @@ function SetAndResetMessageToDownload($target, $message, $forms, &$Messages){
 
 
     if (empty($filteredForm) || !array_key_exists('message', $filteredForm)){
+        error_log("dit");
         return;
     }
 
@@ -446,9 +447,9 @@ if ($connectedToDB){
                     </div>
                 </div>
 
-                <label for="totaalbegeleiders">Aantal begeleiders</label>
-                <input type="number" id="totaalbegeleiders" name="totaalbegeleiders" min="1" max="50" step="1" inputmode="numeric" pattern="[0-9]*" required>
-                <div id="aantalBegeleidersFout" class="foute-invoermelding"></div>
+                <label for="totaalBegeleiders">Aantal begeleiders</label>
+                <input type="number" id="totaalBegeleiders" name="totaalBegeleiders" min="1" max="50" step="1" inputmode="numeric" pattern="[0-9]*" required>
+                <div id="totaalBegeleidersFout" class="foute-invoermelding"></div>
 
                 <div class="meer-informatie-container">
                     <a href="#" class="meerInformatieToggle" data-target="begeleidersInfo"><span>Meer informatie over aantal begeleiders</span></a>
@@ -557,7 +558,7 @@ if ($connectedToDB){
                                 <input type="checkbox" id="waterijsjeCheckbox" name="snack" value="1.00">
                                 <label for="waterijsjeAantal">Aantal:</label>
                                 <input type="number" id="waterijsjeAantal" name="waterijsjeAantal" min="0" value="0" disabled>
-                                <div id="waterijsjeAantalFout" class="foute-invoermeldingg"></div> <!-- Foutdiv toegevoegd -->
+                                <div id="waterijsjeAantalFout" class="foute-invoermelding"></div> <!-- Foutdiv toegevoegd -->
                             </div>
                         </div>
                         <div class="snack-option">
@@ -574,19 +575,21 @@ if ($connectedToDB){
 
                     <h4 class="lunch-heading">LUNCH AANBOD</h4>
                     <span class="subtitle">Vink aan en vul een aantal in</span>
-                        <div class="snack-option">
-                            <label for="remiseLunchCheckbox">Remiselunch: tarwebol met vegetarisch beleg</label>
-                            <span class="subtitle">€3.60</span>
-                            <div class="input-group">
-                                <input type="checkbox" id="remiseLunchCheckbox" name="lunch" value="3.60">
-                                <label for="remiseLunchAantal">Aantal:</label>
-                                <input type="number" id="remiseLunchAantal" name="remiseLunchAantal" min="50" max="200" value="50" disabled>
-                                <div id="remiseLunchAantalFout" class="foute-invoermelding"></div> <!-- Foutdiv toegevoegd -->
-                            </div>
+                    <div class="snack-option">
+                        <label for="remiseLunchCheckbox">Remiselunch: tarwebol met vegetarisch beleg</label>
+                        <span class="subtitle">€3.60</span>
+                        <div class="input-group">
+                            <input type="checkbox" id="remiseLunchCheckbox" name="lunch" value="3.60">
+                            <label for="remiseLunchAantal">Aantal:</label>
+                            <input type="number" id="remiseLunchAantal" name="remiseLunchAantal" min="50" max="200" value="50" disabled>
+                            <div id="remiseLunchAantalFout" class="foute-invoermelding"></div> <!-- Foutdiv toegevoegd -->
                         </div>
+                    </div>
                     <div class="snack-option">
                         <label for="eigenPicknickCheckbox">Nemen eigen lunch mee</label>
                         <input type="checkbox" id="eigenPicknickCheckbox" name="lunch" value="0">
+                        <div id="eigenPicknickFout" class="foute-invoermelding"></div> <!-- Foutdiv toegevoegd -->
+                        </div>
                     </div>
             </fieldset>
 

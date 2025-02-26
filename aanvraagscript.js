@@ -480,7 +480,7 @@ function updateFoodSummary9(aantalBegeleidersInput, aantalLeerlingenInput) {
             const itemName = input.labels[0].innerText.split(':')[0];
             itemSummary.innerHTML = `<span>${amountInput.value} ${itemName}:</span><span>€ ${itemTotal.toLocaleString('nl-NL', { minimumFractionDigits: 2, maximumFractionDigits: 2 })}</span>`;
             foodSummaryDiv.appendChild(itemSummary);
-        }
+        } 
     });
 
     const foodTotalSummary = document.createElement('div');
@@ -1930,6 +1930,8 @@ toggles.forEach(toggle => {
 foodInputs.forEach(input => {
     const snackOption = input.closest('.snack-option');
     const amountInput = snackOption ? snackOption.querySelector('input[type="number"]') : null;
+    const checkbox = snackOption ? snackOption.querySelector('input[type="checkbox"]') : null;
+    const inputFout = snackOption ? snackOption.querySelector(".foute-invoermelding") : null;
 
     if (amountInput) {
         // Start detectie van input-activiteit
@@ -1941,6 +1943,12 @@ foodInputs.forEach(input => {
                 return valideerInput(amountInput); // Input validatie, deze syntax is een callback functie, die valideerinput pas inzet nadat de divs zijn ontvangen
             });
         });
+        amountInput.addEventListener('mouseenter', () => {
+                if (amountInput.disabled){
+                toonFoutmelding(inputFout, "Vink aan om een aantal in te voeren", amountInput, 1500);
+                checkbox.focus();
+            }
+        })
     }
 });
 
